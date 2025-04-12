@@ -50,7 +50,7 @@ const slides: Slide[] = [
     ctaText: 'Explore Pharmacies',
     ctaLink: '/search',
     icon: <FaMapMarkerAlt className="text-teal-500 text-6xl mb-6" />,
-    image: '/images/pharmacy-location.png',
+    image: '/images/pharmacy.jpg',
   },
   {
     id: 'order',
@@ -60,7 +60,7 @@ const slides: Slide[] = [
     ctaText: 'Shop Now',
     ctaLink: '/order',
     icon: <FaPills className="text-purple-500 text-6xl mb-6" />,
-    image: '/images/order-medicine.png',
+    image: '/images/medicine.jpg',
   },
   {
     id: 'inventory',
@@ -70,7 +70,7 @@ const slides: Slide[] = [
     ctaText: 'Join as Pharmacy',
     ctaLink: '/pharmacy/register',
     icon: <FaStore className="text-yellow-500 text-6xl mb-6" />,
-    image: '/images/inventory-management.png',
+    image: '/images/manage.png',
   },
   {
     id: 'chatbot',
@@ -90,7 +90,7 @@ const slides: Slide[] = [
     ctaText: 'Get Started',
     ctaLink: '/signup',
     icon: <FaPills className="text-purple-500 text-6xl mb-6" />,
-    image: '/images/cta.png',
+    image: '/images/logo.jpg',
   },
 ];
 
@@ -114,6 +114,7 @@ export default function Home() {
           ref.offsetTop + ref.offsetHeight > scrollPosition
         ) {
           setCurrentSlide(index);
+          window.removeEventListener('scroll', handleScroll); // Remove listener after first trigger
         }
       });
     };
@@ -158,8 +159,30 @@ export default function Home() {
   };
 
   return (
-    <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 text-gray-200 min-h-screen">
+    <div className="relative bg-gradient-to-br from-gray-700 to-gray-800 text-gray-200 min-h-screen">
       {/* Particle Background */}
+      <AnimatePresence>
+        {currentSlide === 0 && (
+          <motion.div
+            initial={{ y: 0, height: '100vh' }}
+            animate={{
+              y: 0,
+              height: '13vh',
+            }}
+            transition={{
+              // delay: 0,
+              duration: 1.3,
+              ease: 'easeInOut',
+            }}
+            className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center bg-gradient-to-br from-gray-700 to-gray-800 py-4"
+          >
+            <h1 className="text-5xl sm:text-4xl font-extrabold text-gray-100 tracking-wide text-center">
+              WELCOME TO <span className="text-teal-500">VITAMAP</span>
+            </h1>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <Particles
         id="tsparticles"
         init={particlesInit}
@@ -211,7 +234,9 @@ export default function Home() {
       {slides.map((slide, index) => (
         <motion.section
           key={slide.id}
-          ref={(el) => (slideRefs.current[index] = el)}
+          ref={(el) => {
+            slideRefs.current[index] = el as HTMLDivElement | null;
+          }}
           className="min-h-screen flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 snap-start"
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
