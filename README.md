@@ -26,13 +26,13 @@ An app for users to find availability of medicine in nearby pharmacies and for p
      ```
    - Generate the Prisma client:
      ```bash
-     pnpm prisma generate --schema=.db/prisma/schema.prisma
+     pnpm prisma generate --schema=db/prisma/schema.prisma
      ```
 
 4. **Run database migrations**:
 
    ```bash
-   pnpm prisma migrate dev --schema=.db/prisma/schema.prisma
+   pnpm prisma migrate dev --schema=db/prisma/schema.prisma
    ```
 
 5. **Start the development server**:
