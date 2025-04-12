@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaUser, FaLock, FaSignInAlt } from 'react-icons/fa';
 import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles';
-import type { Engine } from 'tsparticles-engine';
+// import { loadFull } from 'tsparticles';
+// import type { Engine } from 'tsparticles-engine';
 
 export default function PharmacyLoginPage() {
   const [formData, setFormData] = useState({

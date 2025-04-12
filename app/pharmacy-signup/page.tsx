@@ -13,8 +13,8 @@ import {
   FaUserPlus,
 } from 'react-icons/fa';
 import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles';
-import type { Engine } from 'tsparticles-engine';
+// import { loadFull } from 'tsparticles';
+// import type { Engine } from 'tsparticles-engine';
 
 export default function PharmacyRegisterPage() {
   const [formData, setFormData] = useState({
