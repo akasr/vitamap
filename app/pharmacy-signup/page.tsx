@@ -1,70 +1,103 @@
 'use client';
 
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { z } from 'zod';
+import { useState } from 'react';
 
-/* 1.This is the schema for the pharmacy sign-up form
-*  It uses Zod for validation
- */
-const PharmacySignUpSchema = z.object({
-  name: z
-    .string()
-    .min(2, 'Pharmacy name must be at least 2 characters long')
-    .max(100, 'Pharmacy name must be under 100 characters'),
-});
-
-// 2. Type Inference from the schema
-type FormData = z.infer<typeof PharmacySignUpSchema>;
-
-// 3. The SignUp component
-export default function SignUp() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormData>({
-    resolver: zodResolver(PharmacySignUpSchema),
+export default function PharmacyRegisterPage() {
+  const [formData, setFormData] = useState({
+    id: '',
+    name: '',
+    phone: '',
+    email: '',
+    username: '',
+    address: '',
+    password: '',
   });
 
-  const onSubmit = (data: FormData) => {
-    console.log(data);
-  };
-  const onError = (errors: any) => {
-    console.error(errors);
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFormSubmit = handleSubmit(onSubmit, onError);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+    setMessage('');
+
+    try {
+      const res = await fetch('/api/pharmacy/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || 'Something went wrong');
+      } else {
+        setMessage(data.message);
+        setFormData({
+          id: '',
+          name: '',
+          phone: '',
+          email: '',
+          username: '',
+          address: '',
+          password: '',
+        });
+      }
+    } catch (err) {
+      console.error(err);
+      setError('Server error. Please try again.');
+    }
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="space-y-6 w-full max-w-md bg-white p-8 rounded-xl shadow-md"
-      >
-        <h1 className="text-3xl font-semibold text-center mb-6">
-          Pharmacy Signup
-        </h1>
+    <div className="max-w-md mx-auto mt-10 p-6 border rounded-xl shadow-lg bg-white">
+      <h2 className="text-2xl font-semibold mb-4 text-center">
+        Pharmacy Registration
+      </h2>
+      {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
+      {message && <p className="text-green-600 text-sm mb-2">{message}</p>}
 
-        {/* Name of Pharmacy */}
-        <div>
-          <label className="block text-sm font-medium mb-1" htmlFor="name">
-            Pharmacy Name
-          </label>
-          <Input
-            id="name"
-            {...register('name')}
-            placeholder="e.g. Apollo Pharmacy"
-          />
-          {errors.name && (
-            <p className="text-sm text-red-500 mt-1">{errors.name.message}</p>
-          )}
-        </div>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        {[
+          { name: 'id', type: 'text', placeholder: 'Pharmacy ID' },
+          { name: 'name', type: 'text', placeholder: 'Pharmacy Name' },
+          { name: 'phone', type: 'tel', placeholder: 'Phone Number' },
+          { name: 'email', type: 'email', placeholder: 'Email Address' },
+          { name: 'username', type: 'text', placeholder: 'Username' },
+          { name: 'address', type: 'text', placeholder: 'Address' },
+          {
+            name: 'password',
+            type: 'password',
+            placeholder: 'Password (min 8 characters)',
+          },
+        ].map(({ name, type, placeholder }) => (
+          <div key={name}>
+            <input
+              type={type}
+              name={name}
+              value={(formData as any)[name]}
+              onChange={handleChange}
+              placeholder={placeholder}
+              required
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-300"
+            />
+          </div>
+        ))}
 
-        <Button type="submit">
-          Submit
-        </Button>
+        <button
+          type="submit"
+          className="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+        >
+          Register
+        </button>
       </form>
     </div>
   );
