@@ -1,0 +1,2013 @@
+{
+  "pharmacies": [
+    {
+      "id": "pharmacy_1",
+      "name": "Pharmacy 1",
+      "username": "pharmacy1",
+      "email": "pharmacy1@vitamap.com",
+      "phone": "+91-9876518915",
+      "password": "hashed_password",
+      "address": "Building 10, Street 2, City 3, Countryland, 56000",
+      "isOpen": true
+    },
+    {
+      "id": "pharmacy_2",
+      "name": "Pharmacy 2",
+      "username": "pharmacy2",
+      "email": "pharmacy2@vitamap.com",
+      "phone": "+91-9876579591",
+      "password": "hashed_password",
+      "address": "Building 10, Street 6, City 4, Countryland, 56001",
+      "isOpen": false
+    },
+    {
+      "id": "pharmacy_3",
+      "name": "Pharmacy 3",
+      "username": "pharmacy3",
+      "email": "pharmacy3@vitamap.com",
+      "phone": "+91-9876590489",
+      "password": "hashed_password",
+      "address": "Building 9, Street 5, City 6, Countryland, 56002",
+      "isOpen": true
+    },
+    {
+      "id": "pharmacy_4",
+      "name": "Pharmacy 4",
+      "username": "pharmacy4",
+      "email": "pharmacy4@vitamap.com",
+      "phone": "+91-9876534957",
+      "password": "hashed_password",
+      "address": "Building 6, Street 6, City 10, Countryland, 56003",
+      "isOpen": true
+    },
+    {
+      "id": "pharmacy_5",
+      "name": "Pharmacy 5",
+      "username": "pharmacy5",
+      "email": "pharmacy5@vitamap.com",
+      "phone": "+91-9876593023",
+      "password": "hashed_password",
+      "address": "Building 9, Street 4, City 5, Countryland, 56004",
+      "isOpen": true
+    },
+    {
+      "id": "pharmacy_6",
+      "name": "Pharmacy 6",
+      "username": "pharmacy6",
+      "email": "pharmacy6@vitamap.com",
+      "phone": "+91-9876530751",
+      "password": "hashed_password",
+      "address": "Building 2, Street 2, City 7, Countryland, 56005",
+      "isOpen": true
+    },
+    {
+      "id": "pharmacy_7",
+      "name": "Pharmacy 7",
+      "username": "pharmacy7",
+      "email": "pharmacy7@vitamap.com",
+      "phone": "+91-9876520546",
+      "password": "hashed_password",
+      "address": "Building 5, Street 5, City 6, Countryland, 56006",
+      "isOpen": true
+    },
+    {
+      "id": "pharmacy_8",
+      "name": "Pharmacy 8",
+      "username": "pharmacy8",
+      "email": "pharmacy8@vitamap.com",
+      "phone": "+91-9876572955",
+      "password": "hashed_password",
+      "address": "Building 7, Street 8, City 5, Countryland, 56007",
+      "isOpen": true
+    },
+    {
+      "id": "pharmacy_9",
+      "name": "Pharmacy 9",
+      "username": "pharmacy9",
+      "email": "pharmacy9@vitamap.com",
+      "phone": "+91-9876538594",
+      "password": "hashed_password",
+      "address": "Building 9, Street 5, City 3, Countryland, 56008",
+      "isOpen": true
+    },
+    {
+      "id": "pharmacy_10",
+      "name": "Pharmacy 10",
+      "username": "pharmacy10",
+      "email": "pharmacy10@vitamap.com",
+      "phone": "+91-9876510399",
+      "password": "hashed_password",
+      "address": "Building 2, Street 3, City 9, Countryland, 56009",
+      "isOpen": true
+    },
+    {
+      "id": "pharmacy_11",
+      "name": "Pharmacy 11",
+      "username": "pharmacy11",
+      "email": "pharmacy11@vitamap.com",
+      "phone": "+91-9876569147",
+      "password": "hashed_password",
+      "address": "Building 10, Street 4, City 10, Countryland, 56010",
+      "isOpen": false
+    },
+    {
+      "id": "pharmacy_12",
+      "name": "Pharmacy 12",
+      "username": "pharmacy12",
+      "email": "pharmacy12@vitamap.com",
+      "phone": "+91-9876521094",
+      "password": "hashed_password",
+      "address": "Building 7, Street 4, City 1, Countryland, 56011",
+      "isOpen": false
+    },
+    {
+      "id": "pharmacy_13",
+      "name": "Pharmacy 13",
+      "username": "pharmacy13",
+      "email": "pharmacy13@vitamap.com",
+      "phone": "+91-9876536394",
+      "password": "hashed_password",
+      "address": "Building 1, Street 3, City 3, Countryland, 56012",
+      "isOpen": true
+    },
+    {
+      "id": "pharmacy_14",
+      "name": "Pharmacy 14",
+      "username": "pharmacy14",
+      "email": "pharmacy14@vitamap.com",
+      "phone": "+91-9876528455",
+      "password": "hashed_password",
+      "address": "Building 6, Street 10, City 5, Countryland, 56013",
+      "isOpen": false
+    },
+    {
+      "id": "pharmacy_15",
+      "name": "Pharmacy 15",
+      "username": "pharmacy15",
+      "email": "pharmacy15@vitamap.com",
+      "phone": "+91-9876594753",
+      "password": "hashed_password",
+      "address": "Building 8, Street 7, City 3, Countryland, 56014",
+      "isOpen": false
+    }
+  ],
+  "locations": [
+    {
+      "pharmacyId": "pharmacy_1",
+      "latitude": 12.928149,
+      "longitude": 77.647562
+    },
+    {
+      "pharmacyId": "pharmacy_2",
+      "latitude": 12.934843,
+      "longitude": 77.628062
+    },
+    {
+      "pharmacyId": "pharmacy_3",
+      "latitude": 13.06512,
+      "longitude": 77.54665
+    },
+    {
+      "pharmacyId": "pharmacy_4",
+      "latitude": 12.985583,
+      "longitude": 77.553119
+    },
+    {
+      "pharmacyId": "pharmacy_5",
+      "latitude": 12.906759,
+      "longitude": 77.532474
+    },
+    {
+      "pharmacyId": "pharmacy_6",
+      "latitude": 12.902553,
+      "longitude": 77.64145
+    },
+    {
+      "pharmacyId": "pharmacy_7",
+      "latitude": 12.901359,
+      "longitude": 77.567607
+    },
+    {
+      "pharmacyId": "pharmacy_8",
+      "latitude": 12.901559,
+      "longitude": 77.692489
+    },
+    {
+      "pharmacyId": "pharmacy_9",
+      "latitude": 12.905148,
+      "longitude": 77.543735
+    },
+    {
+      "pharmacyId": "pharmacy_10",
+      "latitude": 13.080353,
+      "longitude": 77.683912
+    },
+    {
+      "pharmacyId": "pharmacy_11",
+      "latitude": 12.990253,
+      "longitude": 77.652384
+    },
+    {
+      "pharmacyId": "pharmacy_12",
+      "latitude": 13.054098,
+      "longitude": 77.671495
+    },
+    {
+      "pharmacyId": "pharmacy_13",
+      "latitude": 12.941575,
+      "longitude": 77.519868
+    },
+    {
+      "pharmacyId": "pharmacy_14",
+      "latitude": 13.072908,
+      "longitude": 77.549824
+    },
+    {
+      "pharmacyId": "pharmacy_15",
+      "latitude": 12.997454,
+      "longitude": 77.553793
+    }
+  ],
+  "inventory": [
+    {
+      "pharmacyId": "pharmacy_1",
+      "medicineName": "Omeprazole",
+      "batchNumber": "BN1554",
+      "expiryDate": "2025-09-06",
+      "quantity": 76,
+      "pricePerUnit": 105.65,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_1",
+      "medicineName": "Paracetamol",
+      "batchNumber": "BN7930",
+      "expiryDate": "2027-01-10",
+      "quantity": 90,
+      "pricePerUnit": 95.11,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_1",
+      "medicineName": "Amlodipine",
+      "batchNumber": "BN5416",
+      "expiryDate": "2026-09-11",
+      "quantity": 20,
+      "pricePerUnit": 96.44,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_1",
+      "medicineName": "Azithromycin",
+      "batchNumber": "BN7847",
+      "expiryDate": "2026-07-13",
+      "quantity": 62,
+      "pricePerUnit": 62.57,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_1",
+      "medicineName": "Hydrochlorothiazide",
+      "batchNumber": "BN3235",
+      "expiryDate": "2026-08-29",
+      "quantity": 65,
+      "pricePerUnit": 89.33,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_1",
+      "medicineName": "Cetirizine",
+      "batchNumber": "BN1636",
+      "expiryDate": "2026-07-13",
+      "quantity": 24,
+      "pricePerUnit": 59.5,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_1",
+      "medicineName": "Ibuprofen",
+      "batchNumber": "BN2309",
+      "expiryDate": "2025-10-23",
+      "quantity": 37,
+      "pricePerUnit": 107.34,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_1",
+      "medicineName": "Pantoprazole",
+      "batchNumber": "BN9880",
+      "expiryDate": "2026-02-11",
+      "quantity": 85,
+      "pricePerUnit": 129.2,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_1",
+      "medicineName": "Ciprofloxacin",
+      "batchNumber": "BN8427",
+      "expiryDate": "2027-04-12",
+      "quantity": 63,
+      "pricePerUnit": 32.83,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_1",
+      "medicineName": "Amoxicillin",
+      "batchNumber": "BN7159",
+      "expiryDate": "2027-02-27",
+      "quantity": 24,
+      "pricePerUnit": 78.15,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_1",
+      "medicineName": "Salbutamol",
+      "batchNumber": "BN6805",
+      "expiryDate": "2026-08-16",
+      "quantity": 22,
+      "pricePerUnit": 38.24,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_1",
+      "medicineName": "Levocetirizine",
+      "batchNumber": "BN4192",
+      "expiryDate": "2026-03-11",
+      "quantity": 45,
+      "pricePerUnit": 135.21,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_2",
+      "medicineName": "Levocetirizine",
+      "batchNumber": "BN7698",
+      "expiryDate": "2026-03-14",
+      "quantity": 51,
+      "pricePerUnit": 132.59,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_2",
+      "medicineName": "Metformin",
+      "batchNumber": "BN7478",
+      "expiryDate": "2026-04-12",
+      "quantity": 49,
+      "pricePerUnit": 73.78,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_2",
+      "medicineName": "Ciprofloxacin",
+      "batchNumber": "BN8149",
+      "expiryDate": "2026-08-20",
+      "quantity": 53,
+      "pricePerUnit": 64.83,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_2",
+      "medicineName": "Cetirizine",
+      "batchNumber": "BN3675",
+      "expiryDate": "2027-01-17",
+      "quantity": 83,
+      "pricePerUnit": 49.29,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_2",
+      "medicineName": "Amlodipine",
+      "batchNumber": "BN6128",
+      "expiryDate": "2026-05-25",
+      "quantity": 16,
+      "pricePerUnit": 137.84,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_2",
+      "medicineName": "Hydrochlorothiazide",
+      "batchNumber": "BN1918",
+      "expiryDate": "2026-09-05",
+      "quantity": 32,
+      "pricePerUnit": 33.7,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_2",
+      "medicineName": "Pantoprazole",
+      "batchNumber": "BN7705",
+      "expiryDate": "2027-01-23",
+      "quantity": 36,
+      "pricePerUnit": 102.9,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_2",
+      "medicineName": "Azithromycin",
+      "batchNumber": "BN1504",
+      "expiryDate": "2025-08-19",
+      "quantity": 39,
+      "pricePerUnit": 44.79,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_2",
+      "medicineName": "Paracetamol",
+      "batchNumber": "BN4046",
+      "expiryDate": "2027-04-02",
+      "quantity": 82,
+      "pricePerUnit": 116.03,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_2",
+      "medicineName": "Ibuprofen",
+      "batchNumber": "BN9583",
+      "expiryDate": "2026-12-31",
+      "quantity": 35,
+      "pricePerUnit": 147.39,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_2",
+      "medicineName": "Amoxicillin",
+      "batchNumber": "BN7496",
+      "expiryDate": "2025-08-02",
+      "quantity": 90,
+      "pricePerUnit": 109.15,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_2",
+      "medicineName": "Omeprazole",
+      "batchNumber": "BN4105",
+      "expiryDate": "2027-02-08",
+      "quantity": 89,
+      "pricePerUnit": 133.72,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_3",
+      "medicineName": "Metformin",
+      "batchNumber": "BN7741",
+      "expiryDate": "2026-12-05",
+      "quantity": 90,
+      "pricePerUnit": 117.02,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_3",
+      "medicineName": "Paracetamol",
+      "batchNumber": "BN3875",
+      "expiryDate": "2025-09-18",
+      "quantity": 81,
+      "pricePerUnit": 134.76,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_3",
+      "medicineName": "Salbutamol",
+      "batchNumber": "BN7148",
+      "expiryDate": "2026-09-21",
+      "quantity": 34,
+      "pricePerUnit": 63.77,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_3",
+      "medicineName": "Dolo 650",
+      "batchNumber": "BN9443",
+      "expiryDate": "2025-11-06",
+      "quantity": 68,
+      "pricePerUnit": 105.08,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_3",
+      "medicineName": "Omeprazole",
+      "batchNumber": "BN9094",
+      "expiryDate": "2026-10-12",
+      "quantity": 39,
+      "pricePerUnit": 53.52,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_3",
+      "medicineName": "Ibuprofen",
+      "batchNumber": "BN5177",
+      "expiryDate": "2025-11-15",
+      "quantity": 86,
+      "pricePerUnit": 38.67,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_3",
+      "medicineName": "Cetirizine",
+      "batchNumber": "BN1369",
+      "expiryDate": "2027-03-28",
+      "quantity": 55,
+      "pricePerUnit": 113.21,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_3",
+      "medicineName": "Azithromycin",
+      "batchNumber": "BN9774",
+      "expiryDate": "2025-10-06",
+      "quantity": 63,
+      "pricePerUnit": 138.32,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_3",
+      "medicineName": "Hydrochlorothiazide",
+      "batchNumber": "BN4518",
+      "expiryDate": "2026-08-18",
+      "quantity": 87,
+      "pricePerUnit": 48.25,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_3",
+      "medicineName": "Amoxicillin",
+      "batchNumber": "BN8902",
+      "expiryDate": "2027-02-02",
+      "quantity": 47,
+      "pricePerUnit": 45.45,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_3",
+      "medicineName": "Atorvastatin",
+      "batchNumber": "BN2997",
+      "expiryDate": "2026-02-20",
+      "quantity": 72,
+      "pricePerUnit": 109.08,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_4",
+      "medicineName": "Dolo 650",
+      "batchNumber": "BN3878",
+      "expiryDate": "2026-07-04",
+      "quantity": 67,
+      "pricePerUnit": 71.87,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_4",
+      "medicineName": "Hydrochlorothiazide",
+      "batchNumber": "BN2067",
+      "expiryDate": "2027-01-14",
+      "quantity": 23,
+      "pricePerUnit": 143.68,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_4",
+      "medicineName": "Cetirizine",
+      "batchNumber": "BN3580",
+      "expiryDate": "2026-12-06",
+      "quantity": 37,
+      "pricePerUnit": 142.04,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_4",
+      "medicineName": "Ciprofloxacin",
+      "batchNumber": "BN6960",
+      "expiryDate": "2026-09-09",
+      "quantity": 68,
+      "pricePerUnit": 119.03,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_4",
+      "medicineName": "Ibuprofen",
+      "batchNumber": "BN1072",
+      "expiryDate": "2026-09-05",
+      "quantity": 16,
+      "pricePerUnit": 107.5,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_4",
+      "medicineName": "Levocetirizine",
+      "batchNumber": "BN8767",
+      "expiryDate": "2025-10-30",
+      "quantity": 10,
+      "pricePerUnit": 138.5,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_4",
+      "medicineName": "Salbutamol",
+      "batchNumber": "BN3433",
+      "expiryDate": "2026-12-01",
+      "quantity": 46,
+      "pricePerUnit": 125.52,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_4",
+      "medicineName": "Metformin",
+      "batchNumber": "BN3120",
+      "expiryDate": "2026-05-19",
+      "quantity": 15,
+      "pricePerUnit": 114.81,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_4",
+      "medicineName": "Paracetamol",
+      "batchNumber": "BN2378",
+      "expiryDate": "2026-03-16",
+      "quantity": 74,
+      "pricePerUnit": 33.58,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_4",
+      "medicineName": "Amoxicillin",
+      "batchNumber": "BN3883",
+      "expiryDate": "2025-11-23",
+      "quantity": 27,
+      "pricePerUnit": 83.84,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_4",
+      "medicineName": "Atorvastatin",
+      "batchNumber": "BN2870",
+      "expiryDate": "2026-08-06",
+      "quantity": 20,
+      "pricePerUnit": 120.78,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_4",
+      "medicineName": "Amlodipine",
+      "batchNumber": "BN8654",
+      "expiryDate": "2026-01-10",
+      "quantity": 95,
+      "pricePerUnit": 126.84,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_5",
+      "medicineName": "Salbutamol",
+      "batchNumber": "BN4359",
+      "expiryDate": "2027-01-08",
+      "quantity": 93,
+      "pricePerUnit": 88.92,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_5",
+      "medicineName": "Metformin",
+      "batchNumber": "BN7008",
+      "expiryDate": "2027-01-29",
+      "quantity": 33,
+      "pricePerUnit": 143.85,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_5",
+      "medicineName": "Cetirizine",
+      "batchNumber": "BN9524",
+      "expiryDate": "2026-09-11",
+      "quantity": 56,
+      "pricePerUnit": 59.09,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_5",
+      "medicineName": "Pantoprazole",
+      "batchNumber": "BN5706",
+      "expiryDate": "2025-11-03",
+      "quantity": 47,
+      "pricePerUnit": 77.07,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_5",
+      "medicineName": "Paracetamol",
+      "batchNumber": "BN9984",
+      "expiryDate": "2025-08-26",
+      "quantity": 49,
+      "pricePerUnit": 35.5,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_5",
+      "medicineName": "Ciprofloxacin",
+      "batchNumber": "BN4171",
+      "expiryDate": "2025-09-18",
+      "quantity": 72,
+      "pricePerUnit": 48.25,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_5",
+      "medicineName": "Amlodipine",
+      "batchNumber": "BN8563",
+      "expiryDate": "2026-10-01",
+      "quantity": 91,
+      "pricePerUnit": 71.24,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_5",
+      "medicineName": "Atorvastatin",
+      "batchNumber": "BN2504",
+      "expiryDate": "2026-11-19",
+      "quantity": 55,
+      "pricePerUnit": 78.52,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_5",
+      "medicineName": "Dolo 650",
+      "batchNumber": "BN2673",
+      "expiryDate": "2026-01-07",
+      "quantity": 25,
+      "pricePerUnit": 29.86,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_5",
+      "medicineName": "Levocetirizine",
+      "batchNumber": "BN3557",
+      "expiryDate": "2027-01-12",
+      "quantity": 56,
+      "pricePerUnit": 87.32,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_5",
+      "medicineName": "Hydrochlorothiazide",
+      "batchNumber": "BN5297",
+      "expiryDate": "2027-01-28",
+      "quantity": 30,
+      "pricePerUnit": 123.09,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_5",
+      "medicineName": "Azithromycin",
+      "batchNumber": "BN6786",
+      "expiryDate": "2025-08-25",
+      "quantity": 37,
+      "pricePerUnit": 43.22,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_5",
+      "medicineName": "Ibuprofen",
+      "batchNumber": "BN5389",
+      "expiryDate": "2026-01-03",
+      "quantity": 11,
+      "pricePerUnit": 31.31,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_6",
+      "medicineName": "Pantoprazole",
+      "batchNumber": "BN9197",
+      "expiryDate": "2026-02-27",
+      "quantity": 27,
+      "pricePerUnit": 20.01,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_6",
+      "medicineName": "Amoxicillin",
+      "batchNumber": "BN6643",
+      "expiryDate": "2026-06-20",
+      "quantity": 57,
+      "pricePerUnit": 77.38,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_6",
+      "medicineName": "Salbutamol",
+      "batchNumber": "BN1504",
+      "expiryDate": "2026-10-25",
+      "quantity": 22,
+      "pricePerUnit": 59.77,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_6",
+      "medicineName": "Amlodipine",
+      "batchNumber": "BN6937",
+      "expiryDate": "2027-02-10",
+      "quantity": 90,
+      "pricePerUnit": 48.39,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_6",
+      "medicineName": "Cetirizine",
+      "batchNumber": "BN3845",
+      "expiryDate": "2025-08-23",
+      "quantity": 46,
+      "pricePerUnit": 79.23,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_6",
+      "medicineName": "Atorvastatin",
+      "batchNumber": "BN4607",
+      "expiryDate": "2026-07-26",
+      "quantity": 69,
+      "pricePerUnit": 144.13,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_6",
+      "medicineName": "Azithromycin",
+      "batchNumber": "BN7292",
+      "expiryDate": "2025-10-29",
+      "quantity": 96,
+      "pricePerUnit": 114.23,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_6",
+      "medicineName": "Hydrochlorothiazide",
+      "batchNumber": "BN8567",
+      "expiryDate": "2026-02-19",
+      "quantity": 25,
+      "pricePerUnit": 127.61,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_6",
+      "medicineName": "Dolo 650",
+      "batchNumber": "BN4575",
+      "expiryDate": "2026-04-01",
+      "quantity": 32,
+      "pricePerUnit": 138.99,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_6",
+      "medicineName": "Ibuprofen",
+      "batchNumber": "BN3312",
+      "expiryDate": "2026-12-29",
+      "quantity": 57,
+      "pricePerUnit": 33.15,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_6",
+      "medicineName": "Paracetamol",
+      "batchNumber": "BN1929",
+      "expiryDate": "2026-10-02",
+      "quantity": 99,
+      "pricePerUnit": 110.08,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_6",
+      "medicineName": "Metformin",
+      "batchNumber": "BN9516",
+      "expiryDate": "2025-09-19",
+      "quantity": 83,
+      "pricePerUnit": 71.8,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_7",
+      "medicineName": "Dolo 650",
+      "batchNumber": "BN5826",
+      "expiryDate": "2027-03-02",
+      "quantity": 64,
+      "pricePerUnit": 96.06,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_7",
+      "medicineName": "Paracetamol",
+      "batchNumber": "BN8281",
+      "expiryDate": "2026-04-07",
+      "quantity": 15,
+      "pricePerUnit": 118.43,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_7",
+      "medicineName": "Omeprazole",
+      "batchNumber": "BN7516",
+      "expiryDate": "2026-03-28",
+      "quantity": 78,
+      "pricePerUnit": 132.35,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_7",
+      "medicineName": "Cetirizine",
+      "batchNumber": "BN3283",
+      "expiryDate": "2026-10-13",
+      "quantity": 70,
+      "pricePerUnit": 94.8,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_7",
+      "medicineName": "Ciprofloxacin",
+      "batchNumber": "BN6816",
+      "expiryDate": "2025-07-09",
+      "quantity": 84,
+      "pricePerUnit": 43.35,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_7",
+      "medicineName": "Amlodipine",
+      "batchNumber": "BN7581",
+      "expiryDate": "2027-04-12",
+      "quantity": 63,
+      "pricePerUnit": 67.0,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_7",
+      "medicineName": "Atorvastatin",
+      "batchNumber": "BN1018",
+      "expiryDate": "2026-09-12",
+      "quantity": 51,
+      "pricePerUnit": 113.58,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_7",
+      "medicineName": "Hydrochlorothiazide",
+      "batchNumber": "BN9365",
+      "expiryDate": "2026-02-18",
+      "quantity": 79,
+      "pricePerUnit": 32.34,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_7",
+      "medicineName": "Amoxicillin",
+      "batchNumber": "BN7762",
+      "expiryDate": "2026-02-20",
+      "quantity": 24,
+      "pricePerUnit": 69.15,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_7",
+      "medicineName": "Salbutamol",
+      "batchNumber": "BN5165",
+      "expiryDate": "2026-11-09",
+      "quantity": 71,
+      "pricePerUnit": 100.46,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_7",
+      "medicineName": "Levocetirizine",
+      "batchNumber": "BN7460",
+      "expiryDate": "2027-01-23",
+      "quantity": 50,
+      "pricePerUnit": 128.22,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_8",
+      "medicineName": "Amlodipine",
+      "batchNumber": "BN7101",
+      "expiryDate": "2025-12-14",
+      "quantity": 68,
+      "pricePerUnit": 32.21,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_8",
+      "medicineName": "Levocetirizine",
+      "batchNumber": "BN3874",
+      "expiryDate": "2026-10-07",
+      "quantity": 10,
+      "pricePerUnit": 49.55,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_8",
+      "medicineName": "Hydrochlorothiazide",
+      "batchNumber": "BN6407",
+      "expiryDate": "2026-10-20",
+      "quantity": 74,
+      "pricePerUnit": 121.34,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_8",
+      "medicineName": "Cetirizine",
+      "batchNumber": "BN8270",
+      "expiryDate": "2026-09-17",
+      "quantity": 47,
+      "pricePerUnit": 20.91,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_8",
+      "medicineName": "Dolo 650",
+      "batchNumber": "BN6474",
+      "expiryDate": "2026-04-20",
+      "quantity": 54,
+      "pricePerUnit": 88.58,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_8",
+      "medicineName": "Azithromycin",
+      "batchNumber": "BN5134",
+      "expiryDate": "2027-01-26",
+      "quantity": 77,
+      "pricePerUnit": 84.46,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_8",
+      "medicineName": "Omeprazole",
+      "batchNumber": "BN6482",
+      "expiryDate": "2026-08-09",
+      "quantity": 77,
+      "pricePerUnit": 136.95,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_8",
+      "medicineName": "Ciprofloxacin",
+      "batchNumber": "BN5336",
+      "expiryDate": "2026-02-25",
+      "quantity": 100,
+      "pricePerUnit": 33.42,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_8",
+      "medicineName": "Amoxicillin",
+      "batchNumber": "BN8116",
+      "expiryDate": "2026-12-26",
+      "quantity": 72,
+      "pricePerUnit": 23.62,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_8",
+      "medicineName": "Paracetamol",
+      "batchNumber": "BN7039",
+      "expiryDate": "2025-09-07",
+      "quantity": 27,
+      "pricePerUnit": 41.4,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_8",
+      "medicineName": "Salbutamol",
+      "batchNumber": "BN7992",
+      "expiryDate": "2026-09-08",
+      "quantity": 22,
+      "pricePerUnit": 28.36,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_8",
+      "medicineName": "Metformin",
+      "batchNumber": "BN7720",
+      "expiryDate": "2027-01-10",
+      "quantity": 40,
+      "pricePerUnit": 126.28,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_9",
+      "medicineName": "Dolo 650",
+      "batchNumber": "BN5139",
+      "expiryDate": "2026-08-25",
+      "quantity": 65,
+      "pricePerUnit": 88.79,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_9",
+      "medicineName": "Amlodipine",
+      "batchNumber": "BN2396",
+      "expiryDate": "2026-12-03",
+      "quantity": 87,
+      "pricePerUnit": 101.11,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_9",
+      "medicineName": "Cetirizine",
+      "batchNumber": "BN2351",
+      "expiryDate": "2025-08-14",
+      "quantity": 27,
+      "pricePerUnit": 42.88,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_9",
+      "medicineName": "Paracetamol",
+      "batchNumber": "BN4923",
+      "expiryDate": "2027-01-06",
+      "quantity": 46,
+      "pricePerUnit": 26.8,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_9",
+      "medicineName": "Ibuprofen",
+      "batchNumber": "BN2755",
+      "expiryDate": "2027-01-30",
+      "quantity": 77,
+      "pricePerUnit": 41.03,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_9",
+      "medicineName": "Salbutamol",
+      "batchNumber": "BN9291",
+      "expiryDate": "2026-02-19",
+      "quantity": 43,
+      "pricePerUnit": 112.61,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_9",
+      "medicineName": "Pantoprazole",
+      "batchNumber": "BN8054",
+      "expiryDate": "2026-03-15",
+      "quantity": 19,
+      "pricePerUnit": 72.83,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_9",
+      "medicineName": "Azithromycin",
+      "batchNumber": "BN9335",
+      "expiryDate": "2027-03-04",
+      "quantity": 32,
+      "pricePerUnit": 92.82,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_9",
+      "medicineName": "Amoxicillin",
+      "batchNumber": "BN3195",
+      "expiryDate": "2026-10-18",
+      "quantity": 41,
+      "pricePerUnit": 146.78,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_9",
+      "medicineName": "Omeprazole",
+      "batchNumber": "BN2538",
+      "expiryDate": "2026-04-16",
+      "quantity": 27,
+      "pricePerUnit": 27.46,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_9",
+      "medicineName": "Levocetirizine",
+      "batchNumber": "BN8930",
+      "expiryDate": "2026-11-26",
+      "quantity": 87,
+      "pricePerUnit": 144.23,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_9",
+      "medicineName": "Metformin",
+      "batchNumber": "BN7373",
+      "expiryDate": "2027-04-07",
+      "quantity": 49,
+      "pricePerUnit": 80.72,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_9",
+      "medicineName": "Hydrochlorothiazide",
+      "batchNumber": "BN7011",
+      "expiryDate": "2026-11-09",
+      "quantity": 21,
+      "pricePerUnit": 25.29,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_9",
+      "medicineName": "Ciprofloxacin",
+      "batchNumber": "BN5103",
+      "expiryDate": "2025-06-19",
+      "quantity": 27,
+      "pricePerUnit": 72.79,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_9",
+      "medicineName": "Atorvastatin",
+      "batchNumber": "BN1025",
+      "expiryDate": "2025-12-25",
+      "quantity": 25,
+      "pricePerUnit": 44.25,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_10",
+      "medicineName": "Azithromycin",
+      "batchNumber": "BN4679",
+      "expiryDate": "2026-11-13",
+      "quantity": 71,
+      "pricePerUnit": 39.11,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_10",
+      "medicineName": "Levocetirizine",
+      "batchNumber": "BN9700",
+      "expiryDate": "2026-02-06",
+      "quantity": 22,
+      "pricePerUnit": 114.48,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_10",
+      "medicineName": "Cetirizine",
+      "batchNumber": "BN8563",
+      "expiryDate": "2026-01-14",
+      "quantity": 21,
+      "pricePerUnit": 28.4,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_10",
+      "medicineName": "Dolo 650",
+      "batchNumber": "BN2657",
+      "expiryDate": "2025-12-05",
+      "quantity": 85,
+      "pricePerUnit": 76.39,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_10",
+      "medicineName": "Hydrochlorothiazide",
+      "batchNumber": "BN6608",
+      "expiryDate": "2026-05-03",
+      "quantity": 72,
+      "pricePerUnit": 132.26,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_10",
+      "medicineName": "Amoxicillin",
+      "batchNumber": "BN7866",
+      "expiryDate": "2026-05-11",
+      "quantity": 46,
+      "pricePerUnit": 125.03,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_10",
+      "medicineName": "Omeprazole",
+      "batchNumber": "BN2620",
+      "expiryDate": "2026-07-27",
+      "quantity": 87,
+      "pricePerUnit": 148.41,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_10",
+      "medicineName": "Ibuprofen",
+      "batchNumber": "BN7758",
+      "expiryDate": "2026-08-16",
+      "quantity": 76,
+      "pricePerUnit": 83.68,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_10",
+      "medicineName": "Salbutamol",
+      "batchNumber": "BN9630",
+      "expiryDate": "2026-08-14",
+      "quantity": 51,
+      "pricePerUnit": 82.85,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_10",
+      "medicineName": "Metformin",
+      "batchNumber": "BN2818",
+      "expiryDate": "2027-02-13",
+      "quantity": 20,
+      "pricePerUnit": 146.22,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_10",
+      "medicineName": "Pantoprazole",
+      "batchNumber": "BN2365",
+      "expiryDate": "2027-01-20",
+      "quantity": 69,
+      "pricePerUnit": 95.99,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_10",
+      "medicineName": "Ciprofloxacin",
+      "batchNumber": "BN9678",
+      "expiryDate": "2025-05-29",
+      "quantity": 85,
+      "pricePerUnit": 147.57,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_10",
+      "medicineName": "Atorvastatin",
+      "batchNumber": "BN1859",
+      "expiryDate": "2026-01-18",
+      "quantity": 55,
+      "pricePerUnit": 131.72,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_10",
+      "medicineName": "Paracetamol",
+      "batchNumber": "BN2480",
+      "expiryDate": "2026-07-13",
+      "quantity": 62,
+      "pricePerUnit": 62.79,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_11",
+      "medicineName": "Salbutamol",
+      "batchNumber": "BN5250",
+      "expiryDate": "2025-07-28",
+      "quantity": 86,
+      "pricePerUnit": 39.91,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_11",
+      "medicineName": "Dolo 650",
+      "batchNumber": "BN4940",
+      "expiryDate": "2026-08-16",
+      "quantity": 72,
+      "pricePerUnit": 76.27,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_11",
+      "medicineName": "Pantoprazole",
+      "batchNumber": "BN5300",
+      "expiryDate": "2025-10-14",
+      "quantity": 55,
+      "pricePerUnit": 84.09,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_11",
+      "medicineName": "Amlodipine",
+      "batchNumber": "BN3776",
+      "expiryDate": "2027-01-06",
+      "quantity": 59,
+      "pricePerUnit": 126.48,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_11",
+      "medicineName": "Paracetamol",
+      "batchNumber": "BN1749",
+      "expiryDate": "2025-09-04",
+      "quantity": 82,
+      "pricePerUnit": 93.41,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_11",
+      "medicineName": "Omeprazole",
+      "batchNumber": "BN4850",
+      "expiryDate": "2025-05-30",
+      "quantity": 46,
+      "pricePerUnit": 72.6,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_11",
+      "medicineName": "Ibuprofen",
+      "batchNumber": "BN2523",
+      "expiryDate": "2025-07-22",
+      "quantity": 15,
+      "pricePerUnit": 80.04,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_11",
+      "medicineName": "Metformin",
+      "batchNumber": "BN6532",
+      "expiryDate": "2025-11-11",
+      "quantity": 66,
+      "pricePerUnit": 77.63,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_11",
+      "medicineName": "Atorvastatin",
+      "batchNumber": "BN2122",
+      "expiryDate": "2026-05-14",
+      "quantity": 18,
+      "pricePerUnit": 42.25,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_11",
+      "medicineName": "Levocetirizine",
+      "batchNumber": "BN4531",
+      "expiryDate": "2025-09-13",
+      "quantity": 24,
+      "pricePerUnit": 112.23,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_11",
+      "medicineName": "Amoxicillin",
+      "batchNumber": "BN9800",
+      "expiryDate": "2026-05-19",
+      "quantity": 19,
+      "pricePerUnit": 80.23,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_12",
+      "medicineName": "Amlodipine",
+      "batchNumber": "BN9698",
+      "expiryDate": "2027-04-06",
+      "quantity": 49,
+      "pricePerUnit": 90.34,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_12",
+      "medicineName": "Amoxicillin",
+      "batchNumber": "BN2310",
+      "expiryDate": "2027-02-06",
+      "quantity": 45,
+      "pricePerUnit": 44.92,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_12",
+      "medicineName": "Ibuprofen",
+      "batchNumber": "BN2461",
+      "expiryDate": "2026-09-20",
+      "quantity": 79,
+      "pricePerUnit": 148.65,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_12",
+      "medicineName": "Atorvastatin",
+      "batchNumber": "BN4195",
+      "expiryDate": "2026-01-16",
+      "quantity": 64,
+      "pricePerUnit": 144.82,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_12",
+      "medicineName": "Pantoprazole",
+      "batchNumber": "BN2123",
+      "expiryDate": "2026-02-22",
+      "quantity": 75,
+      "pricePerUnit": 124.67,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_12",
+      "medicineName": "Salbutamol",
+      "batchNumber": "BN3238",
+      "expiryDate": "2025-12-30",
+      "quantity": 90,
+      "pricePerUnit": 97.01,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_12",
+      "medicineName": "Hydrochlorothiazide",
+      "batchNumber": "BN7035",
+      "expiryDate": "2026-12-25",
+      "quantity": 21,
+      "pricePerUnit": 113.32,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_12",
+      "medicineName": "Paracetamol",
+      "batchNumber": "BN1707",
+      "expiryDate": "2026-03-28",
+      "quantity": 44,
+      "pricePerUnit": 36.31,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_12",
+      "medicineName": "Cetirizine",
+      "batchNumber": "BN3773",
+      "expiryDate": "2026-01-06",
+      "quantity": 30,
+      "pricePerUnit": 24.57,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_12",
+      "medicineName": "Ciprofloxacin",
+      "batchNumber": "BN2672",
+      "expiryDate": "2025-06-06",
+      "quantity": 87,
+      "pricePerUnit": 84.82,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_13",
+      "medicineName": "Amoxicillin",
+      "batchNumber": "BN8142",
+      "expiryDate": "2026-04-24",
+      "quantity": 30,
+      "pricePerUnit": 131.19,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_13",
+      "medicineName": "Hydrochlorothiazide",
+      "batchNumber": "BN2427",
+      "expiryDate": "2026-08-15",
+      "quantity": 47,
+      "pricePerUnit": 84.1,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_13",
+      "medicineName": "Salbutamol",
+      "batchNumber": "BN6915",
+      "expiryDate": "2026-03-23",
+      "quantity": 74,
+      "pricePerUnit": 86.29,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_13",
+      "medicineName": "Amlodipine",
+      "batchNumber": "BN6030",
+      "expiryDate": "2026-09-29",
+      "quantity": 39,
+      "pricePerUnit": 44.89,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_13",
+      "medicineName": "Paracetamol",
+      "batchNumber": "BN4672",
+      "expiryDate": "2025-09-05",
+      "quantity": 49,
+      "pricePerUnit": 97.93,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_13",
+      "medicineName": "Pantoprazole",
+      "batchNumber": "BN9689",
+      "expiryDate": "2025-11-01",
+      "quantity": 53,
+      "pricePerUnit": 122.76,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_13",
+      "medicineName": "Levocetirizine",
+      "batchNumber": "BN3758",
+      "expiryDate": "2026-08-28",
+      "quantity": 35,
+      "pricePerUnit": 98.2,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_13",
+      "medicineName": "Dolo 650",
+      "batchNumber": "BN1630",
+      "expiryDate": "2025-08-14",
+      "quantity": 35,
+      "pricePerUnit": 35.2,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_13",
+      "medicineName": "Omeprazole",
+      "batchNumber": "BN2532",
+      "expiryDate": "2026-09-10",
+      "quantity": 89,
+      "pricePerUnit": 81.58,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_13",
+      "medicineName": "Ibuprofen",
+      "batchNumber": "BN6536",
+      "expiryDate": "2026-01-25",
+      "quantity": 61,
+      "pricePerUnit": 51.26,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_14",
+      "medicineName": "Cetirizine",
+      "batchNumber": "BN1669",
+      "expiryDate": "2027-02-14",
+      "quantity": 42,
+      "pricePerUnit": 130.41,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_14",
+      "medicineName": "Paracetamol",
+      "batchNumber": "BN5141",
+      "expiryDate": "2027-02-06",
+      "quantity": 24,
+      "pricePerUnit": 44.52,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_14",
+      "medicineName": "Amlodipine",
+      "batchNumber": "BN3686",
+      "expiryDate": "2026-01-17",
+      "quantity": 97,
+      "pricePerUnit": 117.88,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_14",
+      "medicineName": "Hydrochlorothiazide",
+      "batchNumber": "BN2837",
+      "expiryDate": "2026-06-07",
+      "quantity": 66,
+      "pricePerUnit": 82.35,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_14",
+      "medicineName": "Ibuprofen",
+      "batchNumber": "BN2078",
+      "expiryDate": "2026-09-22",
+      "quantity": 83,
+      "pricePerUnit": 107.32,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_14",
+      "medicineName": "Ciprofloxacin",
+      "batchNumber": "BN7728",
+      "expiryDate": "2025-07-10",
+      "quantity": 37,
+      "pricePerUnit": 101.53,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_14",
+      "medicineName": "Azithromycin",
+      "batchNumber": "BN8795",
+      "expiryDate": "2026-09-18",
+      "quantity": 56,
+      "pricePerUnit": 28.88,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_14",
+      "medicineName": "Metformin",
+      "batchNumber": "BN4581",
+      "expiryDate": "2025-09-02",
+      "quantity": 26,
+      "pricePerUnit": 99.58,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_14",
+      "medicineName": "Salbutamol",
+      "batchNumber": "BN3659",
+      "expiryDate": "2026-06-30",
+      "quantity": 39,
+      "pricePerUnit": 85.34,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_14",
+      "medicineName": "Levocetirizine",
+      "batchNumber": "BN4317",
+      "expiryDate": "2026-04-09",
+      "quantity": 13,
+      "pricePerUnit": 55.9,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_14",
+      "medicineName": "Omeprazole",
+      "batchNumber": "BN5275",
+      "expiryDate": "2026-05-25",
+      "quantity": 73,
+      "pricePerUnit": 90.79,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_14",
+      "medicineName": "Pantoprazole",
+      "batchNumber": "BN4511",
+      "expiryDate": "2026-10-17",
+      "quantity": 45,
+      "pricePerUnit": 34.57,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_15",
+      "medicineName": "Atorvastatin",
+      "batchNumber": "BN5273",
+      "expiryDate": "2026-11-02",
+      "quantity": 87,
+      "pricePerUnit": 44.88,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_15",
+      "medicineName": "Cetirizine",
+      "batchNumber": "BN2695",
+      "expiryDate": "2027-04-01",
+      "quantity": 73,
+      "pricePerUnit": 115.19,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_15",
+      "medicineName": "Dolo 650",
+      "batchNumber": "BN3771",
+      "expiryDate": "2026-12-23",
+      "quantity": 93,
+      "pricePerUnit": 69.71,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_15",
+      "medicineName": "Paracetamol",
+      "batchNumber": "BN2577",
+      "expiryDate": "2025-06-22",
+      "quantity": 40,
+      "pricePerUnit": 97.89,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_15",
+      "medicineName": "Hydrochlorothiazide",
+      "batchNumber": "BN2436",
+      "expiryDate": "2026-02-22",
+      "quantity": 50,
+      "pricePerUnit": 21.93,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_15",
+      "medicineName": "Omeprazole",
+      "batchNumber": "BN7119",
+      "expiryDate": "2026-09-22",
+      "quantity": 74,
+      "pricePerUnit": 61.13,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_15",
+      "medicineName": "Ciprofloxacin",
+      "batchNumber": "BN8594",
+      "expiryDate": "2025-08-29",
+      "quantity": 24,
+      "pricePerUnit": 102.02,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_15",
+      "medicineName": "Amoxicillin",
+      "batchNumber": "BN5903",
+      "expiryDate": "2027-02-06",
+      "quantity": 68,
+      "pricePerUnit": 98.65,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_15",
+      "medicineName": "Amlodipine",
+      "batchNumber": "BN4300",
+      "expiryDate": "2026-08-15",
+      "quantity": 38,
+      "pricePerUnit": 100.5,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_15",
+      "medicineName": "Metformin",
+      "batchNumber": "BN6419",
+      "expiryDate": "2025-07-31",
+      "quantity": 96,
+      "pricePerUnit": 95.79,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    },
+    {
+      "pharmacyId": "pharmacy_15",
+      "medicineName": "Azithromycin",
+      "batchNumber": "BN1108",
+      "expiryDate": "2027-03-31",
+      "quantity": 91,
+      "pricePerUnit": 132.84,
+      "createdAt": "2025-04-12T10:15:33Z",
+      "updatedAt": "2025-04-12T10:15:33Z"
+    }
+  ]
+}
