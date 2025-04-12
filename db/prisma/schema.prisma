@@ -1,0 +1,64 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url  	    = env("DATABASE_URL")
+}
+model Pharmacy {
+  id          String     @id @default(cuid())
+  name        String
+  phone       String     @unique
+  email       String     @unique
+  username    String     @unique
+  address     String
+  isOpen      Boolean    @default(true)
+  password    String
+  inventory   Inventory[]
+  location    Location?
+}
+
+model Inventory {
+  medicineName   String
+  batchNumber    String
+  expiryDate     DateTime
+  quantity       Int
+  pricePerUnit   Float
+  pharmacyId     String
+  pharmacy       Pharmacy @relation(fields: [pharmacyId], references: [id])
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@id([pharmacyId, medicineName, batchNumber])
+}
+
+model Location {
+  latitude    Float
+  longitude   Float
+  pharmacyId  String  @id
+  pharmacy    Pharmacy @relation(fields: [pharmacyId], references: [id])
+}
+
+model MedReq {
+  id           String        @id @default(cuid())
+  medicineName String
+  quantity     Int
+  status       RequestStatus @default(PENDING)
+  userId       String
+  pharmacyId   String
+  createdAt    DateTime      @default(now())
+}
+
+enum RequestStatus {
+  PENDING
+  APPROVED
+  DECLINED
+}
