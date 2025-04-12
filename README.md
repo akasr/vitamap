@@ -42,30 +42,30 @@ An app for users to find availability of medicine in nearby pharmacies and for p
 
 ## Features
 
-### Upcoming Features
+### Completed Features
+1. **Pharmacy Registration**:
 
-1. **Pharmacy Sign-In and Sign-Up**:
+   - Pharmacies can sign up and log in using email and password.
+   - Passwords are securely hashed using bcrypt.
 
-   - Pharmacies can create accounts and log in to manage their inventory.
-
-2. **Medicine Search**:
-
-   - Users can search for medicines and view availability in nearby pharmacies.
-
-3. **Interactive Map**:
-
-   - Integrated with Leaflet to display pharmacies on a map.
-
-4. **Inventory Management**:
+2. **Inventory Management**:
 
    - Pharmacies can add, update, and delete inventory items.
 
-5. **User Profile**:
-
-   - Users can view and update their profile information.
-
-6. **Responsive UI**:
+3. **Responsive UI**:
    - Built with Tailwind CSS and ShadCN for a modern and responsive design.
+
+### Upcoming Features
+
+1. **Medicine Search**:
+
+   - Users can search for medicines and view availability in nearby pharmacies.
+
+2. **Interactive Map**:
+
+   - Integrated with Leaflet to display pharmacies on a map.
+
+
 
 ## Dependency Graph
 
