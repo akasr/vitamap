@@ -159,7 +159,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/akasr/vitamap/db/generated/prisma",
+      "value": "C:\\Users\\sneha\\Desktop\\ByteVers25\\vitamap\\db\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -168,12 +168,12 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "debian-openssl-3.0.x",
+        "value": "windows",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/akasr/vitamap/db/prisma/schema.prisma",
+    "sourceFilePath": "C:\\Users\\sneha\\Desktop\\ByteVers25\\vitamap\\db\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {

@@ -19,22 +19,22 @@ export default function MedicineListPage() {
   const [medicines, setMedicines] = useState<Medicine[]>([]);
   const [error, setError] = useState('');
 
-  useEffect(() => {
-    async function fetchMedicines() {
-      try {
-        const res = await fetch(`/api/pharmacy/${pharmacyId}/medicines-list`);
-        const data = await res.json();
+  const fetchMedicines = async () => {
+    try {
+      const res = await fetch(`/api/pharmacy/${pharmacyId}/medicines-list`);
+      const data = await res.json();
 
-        if (!res.ok) {
-          setError(data.error || 'Failed to load medicines');
-        } else {
-          setMedicines(data.medicines || []);
-        }
-      } catch (err) {
-        setError('Failed to fetch medicines');
+      if (!res.ok) {
+        setError(data.error || 'Failed to load medicines');
+      } else {
+        setMedicines(data.medicines || []);
       }
+    } catch (err) {
+      setError('Failed to fetch medicines');
     }
+  };
 
+  useEffect(() => {
     fetchMedicines();
   }, [pharmacyId]);
 
@@ -44,6 +44,29 @@ export default function MedicineListPage() {
 
   const handleEdit = (medicineName: string, batchNumber: string) => {
     router.push(`/pharmacy/${pharmacyId}/edit-medicine?medicineName=${medicineName}&batchNumber=${batchNumber}`);
+  };
+
+  const handleDelete = async (medicineName: string, batchNumber: string) => {
+    const confirmDelete = confirm(`Are you sure you want to delete ${medicineName} (${batchNumber})?`);
+    if (!confirmDelete) return;
+
+    try {
+      const res = await fetch(`/api/pharmacy/${pharmacyId}/medicines-list`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ medicineName, batchNumber }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        alert(data.error || 'Failed to delete');
+      } else {
+        fetchMedicines(); // Refresh list
+      }
+    } catch (err) {
+      alert('Server error');
+    }
   };
 
   return (
@@ -70,7 +93,7 @@ export default function MedicineListPage() {
               <th className="p-2 text-left">Expiry</th>
               <th className="p-2 text-left">Qty</th>
               <th className="p-2 text-left">Price</th>
-              <th className="p-2">Actions</th>
+              <th className="p-2 text-center">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -81,12 +104,18 @@ export default function MedicineListPage() {
                 <td className="p-2">{new Date(med.expiryDate).toLocaleDateString()}</td>
                 <td className="p-2">{med.quantity}</td>
                 <td className="p-2">₹{med.pricePerUnit.toFixed(2)}</td>
-                <td className="p-2 text-center">
+                <td className="p-2 flex justify-center gap-2">
                   <button
                     onClick={() => handleEdit(med.medicineName, med.batchNumber)}
                     className="px-3 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600"
                   >
                     Edit
+                  </button>
+                  <button
+                    onClick={() => handleDelete(med.medicineName, med.batchNumber)}
+                    className="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700"
+                  >
+                    Delete
                   </button>
                 </td>
               </tr>
