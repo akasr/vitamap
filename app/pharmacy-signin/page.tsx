@@ -1,5 +1,5 @@
 'use client';
-
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaUser, FaLock, FaSignInAlt } from 'react-icons/fa';
@@ -14,6 +14,7 @@ export default function PharmacyLoginPage() {
   });
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
+  const router = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -22,28 +23,32 @@ export default function PharmacyLoginPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+  
     setError('');
     setMessage('');
-
+  
     try {
       const res = await fetch('/api/pharmacy/signin', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-
+  
       const data = await res.json();
-
+  
       if (!res.ok) {
         setError(data.error || 'Invalid credentials');
       } else {
         setMessage(data.message);
+        // Redirect using pharmacyId from response
+        router.push(`/pharmacy/${data.pharmacyId}/medicines-list`);
       }
     } catch (err) {
       console.error(err);
       setError('Server error');
     }
   };
+  
 
   // const particlesInit = async (engine: Engine) => {
   //   await loadFull(engine);

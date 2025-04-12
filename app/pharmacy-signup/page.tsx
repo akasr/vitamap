@@ -1,5 +1,5 @@
 'use client';
-
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -34,41 +34,46 @@ export default function PharmacyRegisterPage() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError('');
-    setMessage('');
+  const router = useRouter();
 
-    try {
-      const res = await fetch('/api/pharmacy/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setError('');
+  setMessage('');
+
+  try {
+    const res = await fetch('/api/pharmacy/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      setError(data.error || 'Something went wrong');
+    } else {
+      setMessage(data.message);
+      setFormData({
+        id: '',
+        name: '',
+        phone: '',
+        email: '',
+        username: '',
+        address: '',
+        password: '',
       });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        setError(data.error || 'Something went wrong');
-      } else {
-        setMessage(data.message);
-        setFormData({
-          id: '',
-          name: '',
-          phone: '',
-          email: '',
-          username: '',
-          address: '',
-          password: '',
-        });
-      }
-    } catch (err) {
-      console.error(err);
-      setError('Server error. Please try again.');
+      // Redirect to the medicines list using pharmacyId
+      router.push(`/pharmacy/${data.pharmacyId}/medicines-list`);
     }
-  };
+  } catch (err) {
+    console.error(err);
+    setError('Server error. Please try again.');
+  }
+};
+
 
   // const particlesInit = async (engine: Engine) => {
   //   await loadFull(engine);
