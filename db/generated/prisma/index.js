@@ -160,7 +160,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\asus\\Desktop\\BYTEVERSE-2025\\vitamap\\db\\generated\\prisma",
+      "value": "C:\\Users\\sneha\\Desktop\\ByteVers25\\vitamap\\db\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -174,12 +174,12 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\asus\\Desktop\\BYTEVERSE-2025\\vitamap\\db\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\Users\\sneha\\Desktop\\ByteVers25\\vitamap\\db\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
     "rootEnvPath": null,
-    "schemaEnvPath": "../../.env"
+    "schemaEnvPath": "../../../.env"
   },
   "relativePath": "../../prisma",
   "clientVersion": "6.6.0",
@@ -191,13 +191,13 @@ const config = {
   "inlineDatasources": {
     "db": {
       "url": {
-        "fromEnvVar": "DATABASE_URL",
+        "fromEnvVar": "POSTGRES_URL",
         "value": "postgres://neondb_owner:npg_yBDfuX3U0naY@ep-damp-lake-a1w1xcnf-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require"
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Pharmacy {\n  id        String      @id @default(cuid())\n  name      String\n  phone     String      @unique\n  email     String      @unique\n  username  String      @unique\n  address   String\n  isOpen    Boolean     @default(true)\n  password  String\n  inventory Inventory[]\n  location  Location?\n}\n\nmodel Inventory {\n  medicineName String\n  batchNumber  String\n  expiryDate   DateTime\n  quantity     Int\n  pricePerUnit Float\n  pharmacyId   String\n  pharmacy     Pharmacy @relation(fields: [pharmacyId], references: [id])\n  createdAt    DateTime @default(now())\n  updatedAt    DateTime @updatedAt\n\n  @@id([pharmacyId, medicineName, batchNumber])\n}\n\nmodel Location {\n  latitude   Float\n  longitude  Float\n  pharmacyId String   @id\n  pharmacy   Pharmacy @relation(fields: [pharmacyId], references: [id])\n}\n\nmodel MedReq {\n  id           String        @id @default(cuid())\n  medicineName String\n  quantity     Int\n  status       RequestStatus @default(PENDING)\n  userId       String\n  pharmacyId   String\n  createdAt    DateTime      @default(now())\n}\n\nenum RequestStatus {\n  PENDING\n  APPROVED\n  DECLINED\n}\n",
-  "inlineSchemaHash": "c4a1f5a1557a1ae561a3fbec014e58c294d2b57b70adea1b80627258ae29066c",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"POSTGRES_URL\")\n}\n\nmodel Pharmacy {\n  id        String      @id @default(cuid())\n  name      String\n  phone     String      @unique\n  email     String      @unique\n  username  String      @unique\n  address   String\n  isOpen    Boolean     @default(true)\n  password  String\n  inventory Inventory[]\n  location  Location?\n}\n\nmodel Inventory {\n  medicineName String\n  batchNumber  String\n  expiryDate   DateTime\n  quantity     Int\n  pricePerUnit Float\n  pharmacyId   String\n  pharmacy     Pharmacy @relation(fields: [pharmacyId], references: [id])\n  createdAt    DateTime @default(now())\n  updatedAt    DateTime @updatedAt\n\n  @@id([pharmacyId, medicineName, batchNumber])\n}\n\nmodel Location {\n  latitude   Float\n  longitude  Float\n  pharmacyId String   @id\n  pharmacy   Pharmacy @relation(fields: [pharmacyId], references: [id])\n}\n\nmodel MedReq {\n  id           String        @id @default(cuid())\n  medicineName String\n  quantity     Int\n  status       RequestStatus @default(PENDING)\n  userId       String\n  pharmacyId   String\n  createdAt    DateTime      @default(now())\n}\n\nenum RequestStatus {\n  PENDING\n  APPROVED\n  DECLINED\n}\n",
+  "inlineSchemaHash": "94938c1823e4de3af3871967f6b00b3a98813f93b52611f7af2303f9592109a7",
   "copyEngine": true
 }
 
@@ -206,8 +206,8 @@ const fs = require('fs')
 config.dirname = __dirname
 if (!fs.existsSync(path.join(__dirname, 'schema.prisma'))) {
   const alternativePaths = [
+    "db/generated/prisma",
     "generated/prisma",
-    "prisma",
   ]
   
   const alternativePath = alternativePaths.find((altPath) => {
@@ -237,7 +237,7 @@ Object.assign(exports, Prisma)
 
 // file annotations for bundling tools to include these files
 path.join(__dirname, "query_engine-windows.dll.node");
-path.join(process.cwd(), "generated/prisma/query_engine-windows.dll.node")
+path.join(process.cwd(), "db/generated/prisma/query_engine-windows.dll.node")
 // file annotations for bundling tools to include these files
 path.join(__dirname, "schema.prisma");
-path.join(process.cwd(), "generated/prisma/schema.prisma")
+path.join(process.cwd(), "db/generated/prisma/schema.prisma")
