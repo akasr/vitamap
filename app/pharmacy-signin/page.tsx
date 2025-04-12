@@ -4,8 +4,6 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaUser, FaLock, FaSignInAlt } from 'react-icons/fa';
 import Particles from 'react-tsparticles';
-// import { loadFull } from 'tsparticles';
-// import type { Engine } from 'tsparticles-engine';
 
 export default function PharmacyLoginPage() {
   const [formData, setFormData] = useState({
@@ -41,17 +39,19 @@ export default function PharmacyLoginPage() {
       } else {
         setMessage(data.message);
         // Redirect using pharmacyId from response
+        console.log('Router object:', router);
+        console.log(
+          'Redirecting to:',
+          `/pharmacy/${data.pharmacyId}/medicines-list`,
+        );
         router.push(`/pharmacy/${data.pharmacyId}/medicines-list`);
+        console.log('Redirection attempted');
       }
     } catch (err) {
       console.error(err);
       setError('Server error');
     }
   };
-
-  // const particlesInit = async (engine: Engine) => {
-  //   await loadFull(engine);
-  // };
 
   return (
     <div
@@ -64,7 +64,6 @@ export default function PharmacyLoginPage() {
       {/* Particle Background */}
       <Particles
         id="tsparticles"
-        // init={particlesInit}
         options={{
           background: { color: { value: 'transparent' } },
           fpsLimit: 120,
@@ -191,8 +190,8 @@ export default function PharmacyLoginPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="text-center text-blue-900 mt-6 text-m"  
->
+          className="text-center text-blue-900 mt-6 text-m"
+        >
           Don’t have an account?{' '}
           <a
             href="/pharmacy/signup"
