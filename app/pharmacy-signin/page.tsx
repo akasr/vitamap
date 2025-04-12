@@ -23,19 +23,19 @@ export default function PharmacyLoginPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
+
     setError('');
     setMessage('');
-  
+
     try {
       const res = await fetch('/api/pharmacy/signin', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-  
+
       const data = await res.json();
-  
+
       if (!res.ok) {
         setError(data.error || 'Invalid credentials');
       } else {
@@ -48,7 +48,6 @@ export default function PharmacyLoginPage() {
       setError('Server error');
     }
   };
-  
 
   // const particlesInit = async (engine: Engine) => {
   //   await loadFull(engine);
@@ -160,7 +159,7 @@ export default function PharmacyLoginPage() {
               onChange={handleChange}
               placeholder="Username"
               required
-              className="w-full pl-12 pr-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-xl text-gray-200 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-400 transition-all duration-300"
+              className="w-full pl-12 pr-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-xl text-violet-700 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-400 transition-all duration-300"
             />
           </div>
           <div className="relative">
@@ -172,7 +171,7 @@ export default function PharmacyLoginPage() {
               onChange={handleChange}
               placeholder="Password"
               required
-              className="w-full pl-12 pr-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-xl text-gray-200 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-400 transition-all duration-300"
+              className="w-full pl-12 pr-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-xl   text-violet-700 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-400 transition-all duration-300"
             />
           </div>
           <motion.button
@@ -192,8 +191,8 @@ export default function PharmacyLoginPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="text-center text-blue-900 mt-6 text-sm"
-        >
+          className="text-center text-blue-900 mt-6 text-m"  
+>
           Don’t have an account?{' '}
           <a
             href="/pharmacy/signup"
