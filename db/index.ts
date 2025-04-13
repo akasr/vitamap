@@ -92,7 +92,7 @@ const prisma = new PrismaClient();
 //   });
 
 async function main() {
-  const idsToDelete = ['1', '123', '12345'];
+  const idsToDelete = ['6969', '6060'];
 
   // Delete related inventory
   await prisma.inventory.deleteMany({
