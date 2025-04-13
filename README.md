@@ -2,6 +2,9 @@
 
 An app for users to find availability of medicine in nearby pharmacies and for pharmacies to manage their inventory.
 
+Deployed at: [VitaMap](https://vitamap-kappa.vercel.app/)
+Demonstartion Video: [VitaMap Demo](https://drive.google.com/drive/folders/1Cf9OV613aU8ZzLD5WBJztGbt2GW5ii1I)
+
 ## Development Setup
 
 1. **Clone the repository**:
@@ -100,12 +103,13 @@ An app for users to find availability of medicine in nearby pharmacies and for p
 2. Search medicine returns all the medicine in the database matching irrespctive of pharmacy's location from user's location.
 3. Inconsistent UI
 4. Limited Map Interactivity
+5. Chatbot web service is not integrated with the app. Need of local configuration.
 
 ### Upcoming Features
 
 - Autocomplete and suggestion based on search input
-- Filter of returned pharamacies based on distance, currently open, prescription required.
-- Display alternative medicines if the searched one is not avaialable.
+- Filter of returned pharmacies based on distance, currently open, prescription required.
+- Display alternative medicines if the searched one is not available.
 - Provide insights to the Pharmacies regarding their inventory.
 - Ad Promotion
 
