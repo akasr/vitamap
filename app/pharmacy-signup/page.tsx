@@ -11,6 +11,8 @@ import {
   FaMapMarkerAlt,
   FaLock,
   FaUserPlus,
+  FaMapMarkedAlt,
+  FaCrosshairs,
 } from 'react-icons/fa';
 import Particles from 'react-tsparticles';
 
@@ -23,10 +25,13 @@ export default function PharmacyRegisterPage() {
     username: '',
     address: '',
     password: '',
+    latitude: '',
+    longitude: '',
   });
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [locationLoading, setLocationLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -35,11 +40,40 @@ export default function PharmacyRegisterPage() {
 
   const router = useRouter();
 
+  const getCurrentLocation = () => {
+    if (!navigator.geolocation) {
+      setError('Geolocation is not supported by your browser');
+      return;
+    }
+
+    setLocationLoading(true);
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setFormData((prev) => ({
+          ...prev,
+          latitude: position.coords.latitude.toString(),
+          longitude: position.coords.longitude.toString(),
+        }));
+        setLocationLoading(false);
+      },
+      (error) => {
+        setError('Unable to retrieve your location: ' + error.message);
+        setLocationLoading(false);
+      },
+    );
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
     setMessage('');
     setLoading(true);
+
+    if (!formData.latitude || !formData.longitude) {
+      setError('Location coordinates are required');
+      setLoading(false);
+      return;
+    }
 
     try {
       const res = await fetch('/api/pharmacy/signup', {
@@ -64,6 +98,8 @@ export default function PharmacyRegisterPage() {
           username: '',
           address: '',
           password: '',
+          latitude: '',
+          longitude: '',
         });
         router.push(`/pharmacy/${data.pharmacyId}/medicines-list`);
       }
@@ -236,6 +272,63 @@ export default function PharmacyRegisterPage() {
               />
             </motion.div>
           ))}
+
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-4"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.8, duration: 0.4 }}
+          >
+            <div className="relative">
+              <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
+                <FaMapMarkedAlt className="text-blue-600" />
+              </div>
+              <input
+                type="text"
+                name="latitude"
+                value={formData.latitude}
+                onChange={handleChange}
+                placeholder="Latitude"
+                required
+                className="w-full pl-12 pr-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300"
+              />
+            </div>
+
+            <div className="relative">
+              <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
+                <FaMapMarkedAlt className="text-blue-600" />
+              </div>
+              <input
+                type="text"
+                name="longitude"
+                value={formData.longitude}
+                onChange={handleChange}
+                placeholder="Longitude"
+                required
+                className="w-full pl-12 pr-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300"
+              />
+            </div>
+          </motion.div>
+
+          <motion.button
+            type="button"
+            onClick={getCurrentLocation}
+            disabled={locationLoading}
+            className="w-full py-3 bg-gradient-to-r from-green-500 to-green-700 text-gray-100 rounded-xl font-semibold flex items-center justify-center gap-2 hover:from-green-600 hover:to-green-800 transition-all duration-300 disabled:opacity-70"
+            whileHover={{
+              scale: 1.05,
+              boxShadow: '0 0 20px rgba(16, 185, 129, 0.5)',
+            }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {locationLoading ? (
+              <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            ) : (
+              <>
+                <FaCrosshairs /> Use Current Location
+              </>
+            )}
+          </motion.button>
 
           <motion.button
             whileHover={{
