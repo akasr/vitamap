@@ -1,142 +1,265 @@
-// app/chat/page.tsx
 'use client';
 import GenerateImageButton from './components/GenerateImageButton';
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaPaperPlane, FaUserMd, FaRobot, FaInfoCircle } from 'react-icons/fa';
+import { RiMentalHealthFill } from 'react-icons/ri';
 
 export default function ChatBox() {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState('');
   const [messages, setMessages] = useState<{ user: string; bot: string }[]>([]);
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll to bottom when messages change
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
   const sendMessage = async () => {
     if (!input.trim() || loading) return;
-    
+
     const userMessage = input;
-    setMessages([...messages, { user: userMessage, bot: "..." }]);
-    setInput("");
+    setMessages([...messages, { user: userMessage, bot: '...' }]);
+    setInput('');
     setLoading(true);
 
     try {
-      const res = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ input: userMessage }),
       });
       const data = await res.json();
-      
-      setMessages(prev => {
+
+      setMessages((prev) => {
         const updated = [...prev];
         updated[updated.length - 1].bot = data.answer;
         return updated;
       });
     } catch (error) {
-      setMessages(prev => [...prev, { user: "", bot: "Sorry, something went wrong. Please try again." }]);
+      setMessages((prev) => [
+        ...prev,
+        { user: '', bot: 'Sorry, something went wrong. Please try again.' },
+      ]);
     } finally {
       setLoading(false);
     }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter" && !e.shiftKey) {
+    if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       sendMessage();
     }
   };
 
   return (
-    <div className="flex flex-col h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm py-4 px-6">
-        <h1 className="text-xl font-bold text-blue-600">VitaMap Medical Chat</h1>
-        <p className="text-sm text-gray-500">Ask your health-related questions</p>
-      </header>
-
-      {/* Chat Container */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
-        {messages.length === 0 ? (
-          <div className="flex flex-col items-center justify-center h-full text-gray-400">
-            <div className="text-center p-6 max-w-md">
-              <h2 className="text-xl font-medium mb-2">Welcome to VitaMap Chat</h2>
-              <p>Ask me about vitamins, medications, or general health advice.</p>
-              <p className="mt-4 text-sm">Example: "What are the benefits of vitamin D?"</p>
-            </div>
+    <div className="flex flex-col h-screen bg-gradient-to-br from-indigo-50 to-purple-50 font-sans overflow-hidden">
+      {/* Luxurious Header */}
+      <motion.header
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ type: 'spring', stiffness: 300 }}
+        className="bg-gradient-to-r from-indigo-600 to-purple-600 shadow-2xl py-6 px-8 text-white"
+      >
+        <div className="max-w-6xl mx-auto flex items-center space-x-4">
+          <RiMentalHealthFill className="text-3xl text-white" />
+          <div>
+            <h1 className="text-3xl font-bold tracking-tight">
+              VitaMap Medical AI
+            </h1>
+            <p className="text-sm font-light opacity-90">
+              Your premium health concierge
+            </p>
           </div>
-        ) : (
-          messages.map((msg, idx) => (
-            <div key={idx} className="space-y-2">
-              {msg.user && (
-                <div className="flex justify-end">
-                  <div className="bg-blue-600 text-white rounded-lg py-2 px-4 max-w-xs md:max-w-md lg:max-w-lg">
-                    {msg.user}
-                  </div>
+        </div>
+      </motion.header>
+
+      {/* Chat Container with Glass Morphism */}
+      <div className="flex-1 overflow-y-auto p-6 relative">
+        <div className="max-w-4xl mx-auto">
+          {messages.length === 0 ? (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className="flex flex-col items-center justify-center h-full"
+            >
+              <motion.div
+                animate={{
+                  y: [0, -10, 0],
+                }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 3,
+                  ease: 'easeInOut',
+                }}
+                className="mb-8"
+              >
+                <div className="w-32 h-32 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full flex items-center justify-center shadow-xl">
+                  <RiMentalHealthFill className="text-5xl text-white" />
                 </div>
-              )}
-              {msg.bot && (
-                <div className="flex justify-start">
-                  <div className="bg-white border border-gray-200 rounded-lg py-2 px-4 max-w-xs md:max-w-md lg:max-w-lg">
-                    {msg.bot === "..." ? (
-                      <div className="flex space-x-2">
-                        <div className="w-2 h-2 rounded-full bg-gray-400 animate-bounce"></div>
-                        <div className="w-2 h-2 rounded-full bg-gray-400 animate-bounce" style={{ animationDelay: "0.2s" }}></div>
-                        <div className="w-2 h-2 rounded-full bg-gray-400 animate-bounce" style={{ animationDelay: "0.4s" }}></div>
-                      </div>
-                    ) : (
-                      <>
-                        {msg.bot}
-                        {/* Add the image generation button here */}
-                        <div className="flex justify-end mt-1">
-                          <GenerateImageButton text={msg.bot} message={msg.bot} />
-                        </div>
-                      </>
-                    )}
-                  </div>
+              </motion.div>
+
+              <motion.h2 className="text-3xl font-bold text-gray-800 mb-4">
+                Welcome to VitaMap AI
+              </motion.h2>
+
+              <motion.p className="text-lg text-gray-600 mb-8 max-w-md text-center">
+                Ask me anything about medications, supplements, or general
+                wellness
+              </motion.p>
+
+              <motion.div className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg max-w-md w-full border border-gray-100">
+                <h3 className="font-medium text-gray-700 mb-3">Try asking:</h3>
+                <div className="space-y-3">
+                  {[
+                    'What are the benefits of vitamin D?',
+                    'Can I take ibuprofen with my current medication?',
+                    'What are the symptoms of vitamin B12 deficiency?',
+                  ].map((example, i) => (
+                    <motion.div
+                      key={i}
+                      whileHover={{ x: 5 }}
+                      onClick={() => {
+                        setInput(example);
+                      }}
+                      className="text-left text-indigo-600 cursor-pointer hover:text-indigo-800 transition-colors px-4 py-3 bg-indigo-50 rounded-lg"
+                    >
+                      {example}
+                    </motion.div>
+                  ))}
                 </div>
-              )}
-            </div>
-          ))
-        )}
-        <div ref={messagesEndRef} />
+              </motion.div>
+            </motion.div>
+          ) : (
+            <motion.div className="space-y-6">
+              {messages.map((msg, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="space-y-4"
+                >
+                  {msg.user && (
+                    <div className="flex justify-end">
+                      <motion.div
+                        whileHover={{ scale: 1.02 }}
+                        className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-2xl rounded-br-none py-3 px-5 max-w-xl shadow-lg"
+                      >
+                        {msg.user}
+                      </motion.div>
+                    </div>
+                  )}
+                  {msg.bot && (
+                    <div className="flex justify-start">
+                      <motion.div
+                        whileHover={{ scale: 1.02 }}
+                        className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-2xl rounded-bl-none py-3 px-5 max-w-xl shadow-lg relative"
+                      >
+                        {msg.bot === '...' ? (
+                          <div className="flex space-x-2 items-center">
+                            <div className="w-6 h-6 bg-indigo-100 rounded-full flex items-center justify-center">
+                              <RiMentalHealthFill className="text-indigo-600 text-sm" />
+                            </div>
+                            <div className="flex space-x-1">
+                              <div className="w-2 h-2 rounded-full bg-gray-400 animate-bounce"></div>
+                              <div
+                                className="w-2 h-2 rounded-full bg-gray-400 animate-bounce"
+                                style={{ animationDelay: '0.2s' }}
+                              ></div>
+                              <div
+                                className="w-2 h-2 rounded-full bg-gray-400 animate-bounce"
+                                style={{ animationDelay: '0.4s' }}
+                              ></div>
+                            </div>
+                          </div>
+                        ) : (
+                          <>
+                            <div className="flex items-start space-x-3">
+                              <div className="w-6 h-6 bg-indigo-100 rounded-full flex-shrink-0 flex items-center justify-center">
+                                <RiMentalHealthFill className="text-indigo-600 text-sm" />
+                              </div>
+                              <div className="text-gray-800 leading-relaxed whitespace-pre-wrap">
+                                {msg.bot}
+                              </div>
+                            </div>
+                            <div className="flex justify-end mt-3">
+                              <GenerateImageButton
+                                text={msg.bot}
+                                message={msg.bot}
+                              />
+                            </div>
+                          </>
+                        )}
+                      </motion.div>
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+              <div ref={messagesEndRef} />
+            </motion.div>
+          )}
+        </div>
       </div>
 
-      {/* Input Area */}
-      <div className="bg-white border-t p-4">
-        <div className="flex items-center space-x-2">
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={handleKeyDown}
-            disabled={loading}
-            className="flex-grow border border-gray-300 rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Type your health question..."
-          />
-          <button
-            onClick={sendMessage}
-            disabled={loading || !input.trim()}
-            className="bg-blue-600 text-white rounded-full p-2 w-12 h-12 flex items-center justify-center hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {loading ? (
-              <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-              </svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clipRule="evenodd" />
-              </svg>
-            )}
-          </button>
+      {/* Premium Input Area */}
+      <motion.div
+        initial={{ y: 100 }}
+        animate={{ y: 0 }}
+        transition={{ type: 'spring', stiffness: 300 }}
+        className="bg-white/95 backdrop-blur-lg border-t border-gray-200 px-6 py-5 shadow-xl"
+      >
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center space-x-3">
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKeyDown}
+              disabled={loading}
+              className="flex-grow border-0 bg-gray-100 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400 shadow-inner text-gray-700 placeholder-gray-400 transition-all"
+              placeholder="Type your health question..."
+            />
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={sendMessage}
+              disabled={loading || !input.trim()}
+              className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full p-3 w-12 h-12 flex items-center justify-center shadow-lg disabled:opacity-50"
+            >
+              {loading ? (
+                <svg
+                  className="animate-spin h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
+                </svg>
+              ) : (
+                <FaPaperPlane className="text-lg" />
+              )}
+            </motion.button>
+          </div>
+          <p className="text-xs text-gray-500 mt-3 text-center">
+            VitaMap provides general health information only. Consult a
+            healthcare professional for medical advice.
+          </p>
         </div>
-        <p className="text-xs text-gray-500 mt-2 text-center">
-          VitaMap provides general health information only. Consult a doctor for medical advice.
-        </p>
-      </div>
+      </motion.div>
     </div>
   );
 }
