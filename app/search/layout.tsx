@@ -15,7 +15,7 @@ export default function SearchLayout({
   return (
     <main className="h-screen flex flex-col md:flex-row overflow-hidden relative">
       {/* Sidebar — always visible */}
-      <aside className="w-full md:w-[30vw] lg:w-[20vw] h-[100vh] md:h-full border-r border-gray-200 p-4 overflow-y-auto bg-white z-40">
+      <aside className="w-full md:w-[35vw] lg:w-[25vw] h-[100vh] md:h-full border-r border-gray-200 p-4 overflow-y-auto bg-white z-40">
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-primary">VitaMap</h1>
         </div>
