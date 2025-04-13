@@ -25,7 +25,7 @@ The system uses a Retrieval Augmented Generation (RAG) pipeline to provide accur
 ### 1. Clone the Repository (if you haven't already)
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/akasr/vitamap.git
 cd vitamap
 ```
 
