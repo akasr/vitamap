@@ -57,6 +57,9 @@ An app for users to find availability of medicine in nearby pharmacies and for p
    pnpm prisma migrate dev --schema=db/prisma/schema.prisma
    ```
 
+6. **Configure Chatbot Installation**
+   [Chatbot README](./backend/README.md)
+
 6. **Start the development server**:
    ```bash
    pnpm dev
@@ -78,15 +81,34 @@ An app for users to find availability of medicine in nearby pharmacies and for p
 3. **Responsive UI**:
    - Built with Tailwind CSS and ShadCN for a modern and responsive design.
 
-### Upcoming Features
-
-1. **Medicine Search**:
+4. **Medicine Search**:
 
    - Users can search for medicines and view availability in nearby pharmacies.
+   - Medicine examples such as Cetirizine, Paracetamol, etc.
 
-2. **Interactive Map**:
+5. **Interactive Map**:
 
    - Integrated with Leaflet to display pharmacies on a map.
+
+6. **Chatbot**
+
+   - OpenAI powered chatbot 
+
+#### Constraints on current feature -
+
+1. Pharmacies can curretnly provide their location manually or with by providing current location
+2. Search medicine returns all the medicine in the database matching irrespctive of pharmacy's location from user's location.
+3. Inconsistent UI
+4. Limited Map Interactivity
+
+### Upcoming Features
+
+- Autocomplete and suggestion based on search input
+- Filter of returned pharamacies based on distance, currently open, prescription required.
+- Display alternative medicines if the searched one is not avaialable.
+- Provide insights to the Pharmacies regarding their inventory.
+- Ad Promotion
+
 
 ## Dependency Graph
 
