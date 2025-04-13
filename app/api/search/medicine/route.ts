@@ -21,7 +21,11 @@ export async function GET(request: Request) {
         },
       },
       include: {
-        pharmacy: true,
+        pharmacy: {
+          include: {
+            location: true,
+          },
+        },
       },
     });
 

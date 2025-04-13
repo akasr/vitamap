@@ -2,8 +2,13 @@
 
 import { useState } from 'react';
 import { useMedicineSearch } from '@/app/hooks/useMedicineSearch';
+import { FaMapMarkerAlt } from 'react-icons/fa';
 
-export function SearchSidebar() {
+interface SearchSidebarProps {
+  onShowOnMap?: (pharmacy: any) => void;
+}
+
+export function SearchSidebar({ onShowOnMap }: SearchSidebarProps) {
   const [query, setQuery] = useState('');
   const { search, results, loading, error } = useMedicineSearch();
   const [expandedPharmacyId, setExpandedPharmacyId] = useState<string | null>(
@@ -14,8 +19,6 @@ export function SearchSidebar() {
     e.preventDefault();
     if (!query.trim()) return;
     search(query.trim());
-    // Debug log to check what results we're getting
-    console.log('Search initiated for:', query.trim());
   };
 
   const togglePharmacyDetails = (pharmacyId: string) => {
@@ -33,12 +36,8 @@ export function SearchSidebar() {
     });
   };
 
-  // Debug: Log results when they change
-  console.log('Current search results:', results);
-
   return (
     <div className="p-4 flex flex-col gap-4">
-
       <form onSubmit={handleSearch} className="flex gap-2">
         <input
           type="text"
@@ -80,7 +79,17 @@ export function SearchSidebar() {
               {/* Display pharmacy information if available */}
               {item.pharmacy && (
                 <div className="mt-2 pt-2 border-t">
-                  <h3 className="font-medium">{item.pharmacy.name}</h3>
+                  <div className="flex justify-between items-start">
+                    <h3 className="font-medium">{item.pharmacy.name}</h3>
+                    {item.pharmacy.location && onShowOnMap && (
+                      <button
+                        onClick={() => onShowOnMap(item.pharmacy)}
+                        className="text-blue-600 flex items-center text-sm bg-blue-50 px-2 py-1 rounded hover:bg-blue-100 transition-colors"
+                      >
+                        <FaMapMarkerAlt className="mr-1" /> Show on Map
+                      </button>
+                    )}
+                  </div>
                   <p className="text-sm text-gray-500">
                     {item.pharmacy.address}
                   </p>
@@ -104,6 +113,18 @@ export function SearchSidebar() {
                         <span className="font-medium">Email:</span>{' '}
                         {item.pharmacy.email}
                       </p>
+                      {item.pharmacy.location && (
+                        <>
+                          <p>
+                            <span className="font-medium">Latitude:</span>{' '}
+                            {item.pharmacy.location.latitude}
+                          </p>
+                          <p>
+                            <span className="font-medium">Longitude:</span>{' '}
+                            {item.pharmacy.location.longitude}
+                          </p>
+                        </>
+                      )}
                     </div>
                   )}
                 </div>
@@ -112,22 +133,12 @@ export function SearchSidebar() {
           ))
         ) : (
           <p className="text-sm text-gray-500">
-            {results && results.length === 0
+            {query.trim() && results && results.length === 0
               ? 'No medicines found matching your search'
               : 'Search for medicines to see results'}
           </p>
         )}
       </div>
-
-      {/* Debug section to show raw data structure */}
-      {/* {results && results.length > 0 && (
-        <div className="mt-4 p-2 border rounded bg-gray-50">
-          <p className="text-xs font-bold">Debug - First Result Structure:</p>
-          <pre className="text-xs overflow-auto max-h-40">
-            {JSON.stringify(results[0], null, 2)}
-          </pre>
-        </div>
-      )} */}
     </div>
   );
 }

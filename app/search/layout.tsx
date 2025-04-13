@@ -11,6 +11,13 @@ export default function SearchLayout({
   children: React.ReactNode;
 }) {
   const [mapOpen, setMapOpen] = useState(false);
+  const [selectedPharmacy, setSelectedPharmacy] = useState<any>(null);
+
+  // Function to show a pharmacy on the map
+  const handleShowOnMap = (pharmacy: any) => {
+    setSelectedPharmacy(pharmacy);
+    setMapOpen(true); // Open the map when a pharmacy is selected (for mobile)
+  };
 
   return (
     <main className="h-screen flex flex-col md:flex-row overflow-hidden relative">
@@ -19,12 +26,12 @@ export default function SearchLayout({
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-primary">VitaMap</h1>
         </div>
-        <SearchSidebar />
+        <SearchSidebar onShowOnMap={handleShowOnMap} />
       </aside>
 
       {/* Map Toggle Button — only visible on mobile */}
       <button
-        className="md:hidden absolute bottom-4 right-4 z-60 bg-white p-4 rounded-full shadow-md"
+        className="md:hidden absolute bottom-20 right-4 z-60 bg-white p-4 rounded-full shadow-md"
         onClick={() => {
           setMapOpen((prev) => !prev);
           console.log('Map button clicked');
@@ -45,7 +52,7 @@ export default function SearchLayout({
         `}
         aria-hidden={!mapOpen}
       >
-        <Map />
+        <Map selectedPharmacy={selectedPharmacy} />
       </section>
     </main>
   );
