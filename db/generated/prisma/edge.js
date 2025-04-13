@@ -170,6 +170,10 @@ const config = {
         "fromEnvVar": null,
         "value": "debian-openssl-3.0.x",
         "native": true
+      },
+      {
+        "fromEnvVar": null,
+        "value": "rhel-openssl-3.0.x"
       }
     ],
     "previewFeatures": [],
@@ -196,8 +200,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"POSTGRES_URL\")\n}\n\nmodel Pharmacy {\n  id        String      @id @default(cuid())\n  name      String\n  phone     String      @unique\n  email     String      @unique\n  username  String      @unique\n  address   String\n  isOpen    Boolean     @default(true)\n  password  String\n  inventory Inventory[]\n  location  Location?\n}\n\nmodel Inventory {\n  medicineName String\n  batchNumber  String\n  expiryDate   DateTime\n  quantity     Int\n  pricePerUnit Float\n  pharmacyId   String\n  pharmacy     Pharmacy @relation(fields: [pharmacyId], references: [id])\n  createdAt    DateTime @default(now())\n  updatedAt    DateTime @updatedAt\n\n  @@id([pharmacyId, medicineName, batchNumber])\n}\n\nmodel Location {\n  latitude   Float\n  longitude  Float\n  pharmacyId String   @id\n  pharmacy   Pharmacy @relation(fields: [pharmacyId], references: [id])\n}\n\nmodel MedReq {\n  id           String        @id @default(cuid())\n  medicineName String\n  quantity     Int\n  status       RequestStatus @default(PENDING)\n  userId       String\n  pharmacyId   String\n  createdAt    DateTime      @default(now())\n}\n\nenum RequestStatus {\n  PENDING\n  APPROVED\n  DECLINED\n}\n",
-  "inlineSchemaHash": "94938c1823e4de3af3871967f6b00b3a98813f93b52611f7af2303f9592109a7",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider      = \"prisma-client-js\"\n  output        = \"../generated/prisma\"\n  binaryTargets = [\"native\", \"rhel-openssl-3.0.x\"]\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"POSTGRES_URL\")\n}\n\nmodel Pharmacy {\n  id        String      @id @default(cuid())\n  name      String\n  phone     String      @unique\n  email     String      @unique\n  username  String      @unique\n  address   String\n  isOpen    Boolean     @default(true)\n  password  String\n  inventory Inventory[]\n  location  Location?\n}\n\nmodel Inventory {\n  medicineName String\n  batchNumber  String\n  expiryDate   DateTime\n  quantity     Int\n  pricePerUnit Float\n  pharmacyId   String\n  pharmacy     Pharmacy @relation(fields: [pharmacyId], references: [id])\n  createdAt    DateTime @default(now())\n  updatedAt    DateTime @updatedAt\n\n  @@id([pharmacyId, medicineName, batchNumber])\n}\n\nmodel Location {\n  latitude   Float\n  longitude  Float\n  pharmacyId String   @id\n  pharmacy   Pharmacy @relation(fields: [pharmacyId], references: [id])\n}\n\nmodel MedReq {\n  id           String        @id @default(cuid())\n  medicineName String\n  quantity     Int\n  status       RequestStatus @default(PENDING)\n  userId       String\n  pharmacyId   String\n  createdAt    DateTime      @default(now())\n}\n\nenum RequestStatus {\n  PENDING\n  APPROVED\n  DECLINED\n}\n",
+  "inlineSchemaHash": "5421438b5e5a6ad6926ea3cb9e74029c1897577982e084d2e754b92f04c82d71",
   "copyEngine": true
 }
 config.dirname = '/'
