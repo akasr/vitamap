@@ -18,19 +18,17 @@ import {
   FaComment,
 } from 'react-icons/fa';
 
-// Mock data for demo search
 type Pharmacy = {
   name: string;
   distance: string;
 };
 
 const mockPharmacies: Pharmacy[] = [
-  { name: 'HealthPlus Pharmacy', distance: '0.5 miles' },
-  { name: 'CareRx', distance: '1.2 miles' },
-  { name: 'MediMart', distance: '2.0 miles' },
+  // { name: 'HealthPlus Pharmacy', distance: '0.5 miles' },
+  // { name: 'CareRx', distance: '1.2 miles' },
+  // { name: 'MediMart', distance: '2.0 miles' },
 ];
 
-// Slides data
 type Slide = {
   id: string;
   title: string;
@@ -58,7 +56,7 @@ const slides: Slide[] = [
     description:
       'Effortlessly track and update your medicine inventory with our powerful tools.',
     ctaText: 'Join as Pharmacy',
-    ctaLink: '/pharmacy/register',
+    ctaLink: '/pharmacy/signin',
     icon: <FaStore className="text-yellow-500 text-6xl mb-6" />,
     image: '/images/manage.png',
   },
@@ -68,7 +66,7 @@ const slides: Slide[] = [
     description:
       'Get instant answers about medicines, dosages, and more from our AI assistant.',
     ctaText: 'Try Chatbot',
-    ctaLink: '#chatbot',
+    ctaLink: '/chat',
     icon: <FaRobot className="text-teal-500 text-6xl mb-6" />,
     image: '/images/chatbot.png',
   },
@@ -78,7 +76,7 @@ const slides: Slide[] = [
     description:
       "Whether you're finding medicines or running a pharmacy, VitaMap has you covered.",
     ctaText: 'Get Started',
-    ctaLink: '/signup',
+    ctaLink: '/pharmacy/signup',
     icon: <FaPills className="text-purple-500 text-6xl mb-6" />,
     image: '/images/logo.jpg',
   },
@@ -94,7 +92,6 @@ export default function Home() {
   const [hasAnimated, setHasAnimated] = useState(false);
   const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // Handle scroll to slide
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight / 2;
@@ -112,7 +109,6 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Handle search
   useEffect(() => {
     const timeout = setTimeout(() => {
       if (searchQuery.trim()) {
@@ -129,25 +125,21 @@ export default function Home() {
     return () => clearTimeout(timeout);
   }, [searchQuery]);
 
-  // Set animation complete after duration
   useEffect(() => {
     const timer = setTimeout(() => {
       setHasAnimated(true);
     }, 1300);
-
     return () => clearTimeout(timer);
   }, []);
 
-  // Navigate to slide
   const goToSlide = (index: number) => {
     const element = slideRefs.current[index];
     if (element) {
-      element.scrollIntoView({ behavior: 'auto' });
+      element.scrollIntoView({ behavior: 'smooth' });
       setCurrentSlide(index);
     }
   };
 
-  // Mock chatbot interaction
   const handleChatbotClick = () => {
     setIsChatOpen(true);
     setTimeout(() => {
@@ -155,32 +147,16 @@ export default function Home() {
     }, 5000);
   };
 
+  // Handle navigation with proper event handling
+  const handleNavigation = (e: React.MouseEvent, path: string) => {
+    e.preventDefault();
+    e.stopPropagation();
+    router.push(path);
+  };
+
   return (
     <div className="relative bg-gradient-to-br from-gray-700 to-gray-800 text-gray-200 min-h-screen">
-      {/* Particle Background */}
-      <div
-        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-center bg-gradient-to-br from-gray-700 to-gray-800 py-4 ${
-          !hasAnimated ? 'h-screen' : 'h-[13vh]'
-        }`}
-        style={{
-          transition: 'height 1.3s ease-in-out',
-        }}
-      >
-        <h1 className="text-5xl sm:text-4xl font-extrabold text-gray-100 tracking-wide text-center">
-          WELCOME TO <span className="text-teal-500">VITAMAP</span>
-        </h1>
-      </div>
-
-      {/* Permanent Join Now Button */}
-      <div className="fixed top-6 right-6 z-50">
-        <Button
-          className="bg-purple-600 text-gray-100 hover:bg-purple-700 rounded-xl px-4 py-2 shadow-lg transition-colors duration-300"
-          onClick={() => goToSlide(slides.length - 1)}
-        >
-          Join Now
-        </Button>
-      </div>
-
+      {/* Particle Background - moved to bottom to prevent z-index issues */}
       <Particles
         id="tsparticles"
         options={{
@@ -227,86 +203,124 @@ export default function Home() {
         className="absolute inset-0 z-0"
       />
 
-      {/* Slides */}
-      {slides.map((slide, index) => (
-        <section
-          key={slide.id}
-          ref={(el) => {
-            slideRefs.current[index] = el as HTMLDivElement | null;
+      {/* Header */}
+      <div
+        className={`fixed top-0 left-0 right-0 z-40 flex items-center justify-center bg-gradient-to-br from-gray-700 to-gray-800 py-4 ${
+          !hasAnimated ? 'h-screen' : 'h-[13vh]'
+        }`}
+        style={{
+          transition: 'height 1.3s ease-in-out',
+        }}
+      >
+        <h1 className="text-5xl sm:text-4xl font-extrabold text-gray-100 tracking-wide text-center">
+          WELCOME TO <span className="text-teal-500">VITAMAP</span>
+        </h1>
+      </div>
+
+      {/* Permanent Join Now Button */}
+      <div className="fixed top-6 right-6 z-50">
+        <Button
+          className="bg-purple-600 text-gray-100 hover:bg-purple-700 rounded-xl px-4 py-2 shadow-lg transition-colors duration-300"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            goToSlide(slides.length - 1);
           }}
-          className="min-h-screen flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 snap-start"
         >
-          <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center gap-12">
-            {/* Left: Text and CTA */}
-            <div className="lg:w-1/2 text-center lg:text-left">
-              {slide.icon}
-              <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-100 mb-6">
-                {slide.title}
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-400 mb-8 max-w-md mx-auto lg:mx-0">
-                {slide.description}
-              </p>
-              {slide.id === 'location' && (
-                <div className="relative max-w-md mx-auto lg:mx-0 mb-8">
-                  <div className="relative">
-                    <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-teal-500" />
-                    <Input
-                      type="text"
-                      placeholder="Find pharmacies near you..."
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      className="pl-10 bg-white bg-opacity-10 border-teal-500/30 text-gray-200 rounded-xl focus:ring-teal-500"
-                    />
-                  </div>
-                  {isSearchOpen && (
-                    <div className="absolute z-10 w-full mt-2">
-                      <Card className="bg-gray-900 bg-opacity-90 border-teal-500/30 rounded-xl">
-                        <CardContent className="p-4">
-                          {searchResults.length ? (
-                            searchResults.map((pharmacy) => (
-                              <div
-                                key={pharmacy.name}
-                                className="text-gray-200 hover:bg-teal-500/20 p-2 rounded cursor-pointer"
-                                onClick={() => router.push('/search')}
-                              >
-                                {pharmacy.name} - {pharmacy.distance}
-                              </div>
-                            ))
-                          ) : (
-                            <p className="text-gray-400">
-                              No pharmacies found.
-                            </p>
-                          )}
-                        </CardContent>
-                      </Card>
+          Join Now
+        </Button>
+      </div>
+
+      {/* Slides */}
+      <div className="relative z-10 pt-[13vh]">
+        {slides.map((slide, index) => (
+          <section
+            key={slide.id}
+            ref={(el) => {
+              slideRefs.current[index] = el as HTMLDivElement | null;
+            }}
+            className="min-h-screen flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 snap-start"
+          >
+            <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center gap-12">
+              {/* Left: Text and CTA */}
+              <div className="lg:w-1/2 text-center lg:text-left">
+                {slide.icon}
+                <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-100 mb-6">
+                  {slide.title}
+                </h2>
+                <p className="text-lg sm:text-xl text-gray-400 mb-8 max-w-md mx-auto lg:mx-0">
+                  {slide.description}
+                </p>
+                {slide.id === 'location' && (
+                  <div className="relative max-w-md mx-auto lg:mx-0 mb-8">
+                    <div className="relative">
+                      <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-teal-500" />
+                      <Input
+                        type="text"
+                        placeholder="Find pharmacies near you..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="pl-10 bg-white bg-opacity-10 border-teal-500/30 text-gray-200 rounded-xl focus:ring-teal-500"
+                      />
                     </div>
-                  )}
-                </div>
-              )}
-              <Button
-                className="bg-teal-600 text-gray-100 hover:bg-teal-700 rounded-xl px-6 py-3 text-lg transition-colors duration-300"
-                onClick={() => router.push(slide.ctaLink)}
-              >
-                {slide.ctaText}
-              </Button>
+                    {isSearchOpen && (
+                      <div className="absolute z-20 w-full mt-2">
+                        <Card className="bg-gray-900 bg-opacity-90 border-teal-500/30 rounded-xl">
+                          <CardContent className="p-4">
+                            {searchResults.length ? (
+                              searchResults.map((pharmacy) => (
+                                <div
+                                  key={pharmacy.name}
+                                  className="text-gray-200 hover:bg-teal-500/20 p-2 rounded cursor-pointer"
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    router.push('/search');
+                                  }}
+                                >
+                                  {pharmacy.name} - {pharmacy.distance}
+                                </div>
+                              ))
+                            ) : (
+                              <p className="text-gray-400">
+                                No pharmacies found.
+                              </p>
+                            )}
+                          </CardContent>
+                        </Card>
+                      </div>
+                    )}
+                  </div>
+                )}
+                <Button
+                  className="bg-teal-600 text-gray-100 hover:bg-teal-700 rounded-xl px-6 py-3 text-lg transition-colors duration-300"
+                  onClick={(e) => handleNavigation(e, slide.ctaLink)}
+                >
+                  {slide.ctaText}
+                </Button>
+              </div>
+              {/* Right: Image */}
+              <div className="lg:w-1/2">
+                <img
+                  src={slide.image}
+                  alt={slide.title}
+                  className="w-full h-64 sm:h-96 object-cover rounded-xl shadow-lg"
+                />
+              </div>
             </div>
-            {/* Right: Image */}
-            <div className="lg:w-1/2">
-              <img
-                src={slide.image}
-                alt={slide.title}
-                className="w-full h-64 sm:h-96 object-cover rounded-xl shadow-lg"
-              />
-            </div>
-          </div>
-        </section>
-      ))}
+          </section>
+        ))}
+      </div>
 
       {/* Chatbot Floating Button */}
       <div className="fixed bottom-6 right-6 z-50">
         <Button
           className="bg-purple-600 text-gray-100 hover:bg-purple-700 rounded-full p-4 shadow-lg transition-colors duration-300"
-          onClick={handleChatbotClick}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            handleChatbotClick();
+          }}
         >
           <FaComment size={24} />
         </Button>
