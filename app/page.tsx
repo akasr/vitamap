@@ -52,16 +52,16 @@ const slides: Slide[] = [
     icon: <FaMapMarkerAlt className="text-teal-500 text-6xl mb-6" />,
     image: '/images/pharmacy.jpg',
   },
-  {
-    id: 'order',
-    title: 'Order Medicines with Ease',
-    description:
-      'Browse and order medicines from trusted pharmacies, delivered to your door.',
-    ctaText: 'Shop Now',
-    ctaLink: '/order',
-    icon: <FaPills className="text-purple-500 text-6xl mb-6" />,
-    image: '/images/medicine.jpg',
-  },
+  // {
+  //   id: 'order',
+  //   title: 'Order Medicines with Ease',
+  //   description:
+  //     'Browse and order medicines from trusted pharmacies, delivered to your door.',
+  //   ctaText: 'Shop Now',
+  //   ctaLink: '/order',
+  //   icon: <FaPills className="text-purple-500 text-6xl mb-6" />,
+  //   image: '/images/medicine.jpg',
+  // },
   {
     id: 'inventory',
     title: 'Manage Your Pharmacy',
@@ -93,6 +93,16 @@ const slides: Slide[] = [
     image: '/images/logo.jpg',
   },
 ];
+
+// export default function Home() {
+//   return (
+//     <div>
+//       Landing Page
+//     </div>
+//   );
+// }
+// app/page.tsx
+import Link from 'next/link';
 
 export default function Home() {
   const router = useRouter();
@@ -331,7 +341,7 @@ export default function Home() {
       ))}
 
       {/* Navigation Dots */}
-      <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-3">
+      {/* <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-3">
         {slides.map((_, index) => (
           <motion.div
             key={index}
@@ -342,7 +352,7 @@ export default function Home() {
             onClick={() => goToSlide(index)}
           />
         ))}
-      </div>
+      </div> */}
 
       {/* Chatbot Floating Button */}
       <motion.div

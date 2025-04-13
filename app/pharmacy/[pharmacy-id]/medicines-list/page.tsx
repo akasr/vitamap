@@ -77,6 +77,7 @@ export default function MedicineListPage() {
   const [filteredMedicines, setFilteredMedicines] = useState<Medicine[]>([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
+  const [isAdding, setIsAdding] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState<keyof Medicine | ''>('');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
@@ -91,12 +92,17 @@ export default function MedicineListPage() {
 
       if (!res.ok) {
         setError(data.error || 'Failed to load medicines');
+        setMedicines([]);
+        setFilteredMedicines([]);
       } else {
         setMedicines(data.medicines || []);
         setFilteredMedicines(data.medicines || []);
+        setError('');
       }
     } catch (err) {
       setError('Failed to fetch medicines');
+      setMedicines([]);
+      setFilteredMedicines([]);
     } finally {
       setLoading(false);
     }
@@ -151,15 +157,17 @@ export default function MedicineListPage() {
     }
 
     setFilteredMedicines(result);
+    setCurrentPage(1); // Reset to first page when filters change
   }, [searchQuery, sortBy, sortDirection, medicines]);
 
   const handleAdd = () => {
+    setIsAdding(true);
     router.push(`/pharmacy/${pharmacyId}/add-medicine`);
   };
 
   const handleEdit = (medicineName: string, batchNumber: string) => {
     router.push(
-      `/pharmacy/${pharmacyId}/edit-medicine?medicineName=${medicineName}&batchNumber=${batchNumber}`,
+      `/pharmacy/${pharmacyId}/edit-medicine?medicineName=${encodeURIComponent(medicineName)}&batchNumber=${encodeURIComponent(batchNumber)}`,
     );
   };
 
@@ -176,7 +184,7 @@ export default function MedicineListPage() {
       if (!res.ok) {
         setError(data.error || 'Failed to delete');
       } else {
-        fetchMedicines();
+        await fetchMedicines();
       }
     } catch (err) {
       setError('Server error');
@@ -196,11 +204,6 @@ export default function MedicineListPage() {
     setCurrentPage(page);
   };
 
-  // const particlesInit = async (engine: Engine) => {
-  //   await loadFull(engine);
-  // };
-
-  // Pagination logic
   const totalPages = Math.ceil(filteredMedicines.length / itemsPerPage);
   const paginatedMedicines = filteredMedicines.slice(
     (currentPage - 1) * itemsPerPage,
@@ -209,10 +212,8 @@ export default function MedicineListPage() {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center py-12 px-4">
-      {/* Particle Background */}
       <Particles
         id="tsparticles"
-        // init={particlesInit}
         options={{
           background: { color: { value: 'transparent' } },
           fpsLimit: 120,
@@ -257,7 +258,6 @@ export default function MedicineListPage() {
         className="absolute inset-0 z-0"
       />
 
-      {/* Glassmorphic Card */}
       <motion.div
         initial={{ opacity: 0, scale: 0.95, y: 50 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -321,8 +321,37 @@ export default function MedicineListPage() {
                   <Button
                     onClick={handleAdd}
                     className="w-full md:w-auto bg-teal-600 text-gray-100 hover:bg-teal-700 rounded-xl transition-colors"
+                    disabled={isAdding || loading}
                   >
-                    <FaPills className="mr-2" /> Add Medicine
+                    {isAdding ? (
+                      <div className="flex items-center">
+                        <svg
+                          className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                          ></circle>
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                          ></path>
+                        </svg>
+                        Loading...
+                      </div>
+                    ) : (
+                      <>
+                        <FaPills className="mr-2" /> Add Medicine
+                      </>
+                    )}
                   </Button>
                 </motion.div>
                 <motion.div
@@ -332,6 +361,7 @@ export default function MedicineListPage() {
                   <Button
                     onClick={fetchMedicines}
                     className="w-full md:w-auto bg-purple-600 text-gray-100 hover:bg-purple-700 rounded-xl transition-colors"
+                    disabled={loading}
                   >
                     <FaSync className="mr-2" /> Refresh
                   </Button>
@@ -355,7 +385,7 @@ export default function MedicineListPage() {
                 animate={{ opacity: 1 }}
                 className="text-gray-600 text-center font-semibold"
               >
-                No medicines found.
+                {searchQuery ? 'No matching medicines found' : 'No medicines available'}
               </motion.p>
             ) : (
               <div className="overflow-x-auto">
