@@ -4,8 +4,8 @@ import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles';
-import type { Engine } from 'tsparticles-engine';
+// import { loadFull } from 'tsparticles';
+// import type { Engine } from 'tsparticles-engine';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
@@ -150,9 +150,9 @@ export default function Home() {
   }, [searchQuery]);
 
   // Particles init
-  const particlesInit = async (engine: Engine) => {
-    await loadFull(engine);
-  };
+  // const particlesInit = async (engine: Engine) => {
+  //   await loadFull(engine);
+  // };
 
   // Navigate to slide
   const goToSlide = (index: number) => {
@@ -195,7 +195,7 @@ export default function Home() {
 
       <Particles
         id="tsparticles"
-        init={particlesInit}
+        // init={particlesInit}
         options={{
           background: { color: { value: 'transparent' } },
           fpsLimit: 120,
