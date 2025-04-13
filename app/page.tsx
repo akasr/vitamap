@@ -94,6 +94,16 @@ const slides: Slide[] = [
   },
 ];
 
+// export default function Home() {
+//   return (
+//     <div>
+//       Landing Page
+//     </div>
+//   );
+// }
+// app/page.tsx
+import Link from 'next/link';
+
 export default function Home() {
   const router = useRouter();
   const [currentSlide, setCurrentSlide] = useState(0);

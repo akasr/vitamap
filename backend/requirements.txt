@@ -1,0 +1,41 @@
+
+uvicorn
+python-dotenv
+langchain
+openai
+
+# Core LangChain libraries
+
+langchain-openai
+langchain-pinecone
+langchain-text-splitters
+
+# Pinecone vector DB
+pinecone-client
+
+# PDF handling
+pypdf
+
+# Environment variable loader
+
+
+# Progress bars
+tqdm
+
+# FastAPI for backend API
+fastapi
+
+# ASGI server for running FastAPI apps
+
+
+# Jupyter Notebook (for trails.ipynb work)
+
+
+# Optional JSON utility (or use built-in json)
+ujson
+
+# Typing utilities (esp. for older Python versions)
+typing-extensions
+
+# Optional: Path operations
+pathlib
