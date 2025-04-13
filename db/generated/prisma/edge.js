@@ -159,7 +159,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\sneha\\Desktop\\ByteVers25\\vitamap\\db\\generated\\prisma",
+      "value": "/home/akasr/vitamap/db/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -168,12 +168,12 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "windows",
+        "value": "debian-openssl-3.0.x",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\sneha\\Desktop\\ByteVers25\\vitamap\\db\\prisma\\schema.prisma",
+    "sourceFilePath": "/home/akasr/vitamap/db/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -187,11 +187,12 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
         "fromEnvVar": "POSTGRES_URL",
-        "value": "postgres://neondb_owner:npg_yBDfuX3U0naY@ep-damp-lake-a1w1xcnf-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require"
+        "value": null
       }
     }
   },

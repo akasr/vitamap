@@ -17,7 +17,29 @@ An app for users to find availability of medicine in nearby pharmacies and for p
    pnpm i
    ```
 
-3. **Configure Prisma**:
+3. **Configure environment variables**:
+
+   - Create or update the `.env` file with the following:
+
+     ```env
+     # Database configuration
+     POSTGRES_URL=postgres://<username>:<password>@<host>/<database>?connect_timeout=15&sslmode=require
+
+     # JWT configuration
+     JWT_SECRET=<your-secure-random-string>
+     ```
+
+   - For the JWT_SECRET, generate a secure random string using:
+
+     ```bash
+     # macOS/Linux
+     openssl rand -base64 32
+
+     # Windows users can generate a secret at:
+     # https://generate-secret.vercel.app/32
+     ```
+
+4. **Configure Prisma**:
 
    - Ensure you have a PostgreSQL database running.
    - Update the `.env` file with your database connection string. Example:
@@ -26,46 +48,45 @@ An app for users to find availability of medicine in nearby pharmacies and for p
      ```
    - Generate the Prisma client:
      ```bash
-     pnpm prisma generate --schema=.db/prisma/schema.prisma
+     pnpm prisma generate --schema=db/prisma/schema.prisma
      ```
 
-4. **Run database migrations**:
+5. **Run database migrations**:
 
    ```bash
-   pnpm prisma migrate dev --schema=.db/prisma/schema.prisma
+   pnpm prisma migrate dev --schema=db/prisma/schema.prisma
    ```
 
-5. **Start the development server**:
+6. **Start the development server**:
    ```bash
    pnpm dev
    ```
 
 ## Features
 
-### Upcoming Features
+### Completed Features
 
-1. **Pharmacy Sign-In and Sign-Up**:
+1. **Pharmacy Registration**:
 
-   - Pharmacies can create accounts and log in to manage their inventory.
+   - Pharmacies can sign up and log in using email and password.
+   - Passwords are securely hashed using bcrypt.
 
-2. **Medicine Search**:
-
-   - Users can search for medicines and view availability in nearby pharmacies.
-
-3. **Interactive Map**:
-
-   - Integrated with Leaflet to display pharmacies on a map.
-
-4. **Inventory Management**:
+2. **Inventory Management**:
 
    - Pharmacies can add, update, and delete inventory items.
 
-5. **User Profile**:
-
-   - Users can view and update their profile information.
-
-6. **Responsive UI**:
+3. **Responsive UI**:
    - Built with Tailwind CSS and ShadCN for a modern and responsive design.
+
+### Upcoming Features
+
+1. **Medicine Search**:
+
+   - Users can search for medicines and view availability in nearby pharmacies.
+
+2. **Interactive Map**:
+
+   - Integrated with Leaflet to display pharmacies on a map.
 
 ## Dependency Graph
 
@@ -73,21 +94,37 @@ An app for users to find availability of medicine in nearby pharmacies and for p
 
 - `@hookform/resolvers`: Resolver utilities for React Hook Form.
 - `@prisma/client`: Prisma client for database interaction.
+- `@radix-ui/react-alert-dialog`: Radix UI component for alert dialogs.
 - `@radix-ui/react-checkbox`: Radix UI component for checkboxes.
+- `@radix-ui/react-dialog`: Radix UI component for dialogs.
 - `@radix-ui/react-label`: Radix UI component for labels.
+- `@radix-ui/react-navigation-menu`: Radix UI component for navigation menus.
+- `@radix-ui/react-select`: Radix UI component for select inputs.
+- `@radix-ui/react-slider`: Radix UI component for sliders.
 - `@radix-ui/react-slot`: Radix UI component for slots.
+- `@radix-ui/react-tooltip`: Radix UI component for tooltips.
 - `bcryptjs`: Library for hashing passwords.
 - `class-variance-authority`: Utility for managing class names.
 - `clsx`: Utility for conditionally joining class names.
+- `cmdk`: Command menu component.
+- `cookie`: HTTP cookie parsing and serialization.
+- `framer-motion`: Animation library for React.
+- `jose`: JavaScript Object Signing and Encryption library for JWT.
 - `leaflet`: JavaScript library for interactive maps.
 - `lucide-react`: React components for Lucide icons.
 - `next`: React framework for server-side rendering and static site generation.
 - `react`: Library for building user interfaces.
 - `react-dom`: React package for working with the DOM.
 - `react-hook-form`: Library for managing forms in React.
+- `react-icons`: Icon library for React.
 - `react-leaflet`: React components for Leaflet maps.
+- `react-slick`: React carousel component.
+- `react-tsparticles`: Particles animation library for React.
+- `slick-carousel`: Carousel/slider component.
+- `tailwind-animate`: Animation utilities for Tailwind CSS.
 - `tailwind-merge`: Utility for merging Tailwind CSS classes.
-- `tw-animate-css`: Tailwind CSS plugin for animations.
+- `tailwindcss-animate`: Animation plugin for Tailwind CSS.
+- `tsparticles`: Particles animation library.
 - `zod`: TypeScript-first schema validation library.
 
 ### DevDependencies
@@ -98,8 +135,11 @@ An app for users to find availability of medicine in nearby pharmacies and for p
 - `@types/node`: TypeScript definitions for Node.js.
 - `@types/react`: TypeScript definitions for React.
 - `@types/react-dom`: TypeScript definitions for React DOM.
+- `@types/react-slick`: TypeScript definitions for React Slick.
+- `autoprefixer`: PostCSS plugin to parse CSS and add vendor prefixes.
 - `eslint`: Linting tool for code quality.
 - `eslint-config-next`: ESLint configuration for Next.js.
+- `postcss`: Tool for transforming CSS with JavaScript plugins.
 - `prisma`: ORM for database schema and migrations.
 - `tailwindcss`: Utility-first CSS framework.
 - `typescript`: TypeScript support for type safety.

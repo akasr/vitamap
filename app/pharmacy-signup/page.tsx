@@ -13,8 +13,6 @@ import {
   FaUserPlus,
 } from 'react-icons/fa';
 import Particles from 'react-tsparticles';
-// import { loadFull } from 'tsparticles';
-// import type { Engine } from 'tsparticles-engine';
 
 export default function PharmacyRegisterPage() {
   const [formData, setFormData] = useState({
@@ -28,6 +26,7 @@ export default function PharmacyRegisterPage() {
   });
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -36,48 +35,45 @@ export default function PharmacyRegisterPage() {
 
   const router = useRouter();
 
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setError('');
-  setMessage('');
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+    setMessage('');
+    setLoading(true);
 
-  try {
-    const res = await fetch('/api/pharmacy/signup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
-
-    const data = await res.json();
-
-    if (!res.ok) {
-      setError(data.error || 'Something went wrong');
-    } else {
-      setMessage(data.message);
-      setFormData({
-        id: '',
-        name: '',
-        phone: '',
-        email: '',
-        username: '',
-        address: '',
-        password: '',
+    try {
+      const res = await fetch('/api/pharmacy/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-      // Redirect to the medicines list using pharmacyId
-      router.push(`/pharmacy/${data.pharmacyId}/medicines-list`);
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || 'Something went wrong');
+      } else {
+        setMessage(data.message);
+        setFormData({
+          id: '',
+          name: '',
+          phone: '',
+          email: '',
+          username: '',
+          address: '',
+          password: '',
+        });
+        router.push(`/pharmacy/${data.pharmacyId}/medicines-list`);
+      }
+    } catch (err) {
+      console.error(err);
+      setError('Server error. Please try again.');
+    } finally {
+      setLoading(false);
     }
-  } catch (err) {
-    console.error(err);
-    setError('Server error. Please try again.');
-  }
-};
-
-
-  // const particlesInit = async (engine: Engine) => {
-  //   await loadFull(engine);
-  // };
+  };
 
   const inputFields = [
     {
@@ -132,10 +128,8 @@ const handleSubmit = async (e: React.FormEvent) => {
           "linear-gradient(rgba(30, 58, 138, 0.7), rgba(30, 58, 138, 0.7)), url('https://images.unsplash.com/photo-1585435557343-3b092031a831?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
       }}
     >
-      {/* Particle Background */}
       <Particles
         id="tsparticles"
-        // init={particlesInit}
         options={{
           background: { color: { value: 'transparent' } },
           fpsLimit: 120,
@@ -180,7 +174,6 @@ const handleSubmit = async (e: React.FormEvent) => {
         className="absolute inset-0 z-0"
       />
 
-      {/* Glassmorphic Card */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9, y: 50 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -251,9 +244,16 @@ const handleSubmit = async (e: React.FormEvent) => {
             }}
             whileTap={{ scale: 0.95 }}
             type="submit"
-            className="w-full py-3 bg-gradient-to-r from-blue-500 to-blue-700 text-gray-100 rounded-xl font-semibold flex items-center justify-center gap-2 hover:from-blue-600 hover:to-blue-800 transition-all duration-300"
+            disabled={loading}
+            className="w-full py-3 bg-gradient-to-r from-blue-500 to-blue-700 text-gray-100 rounded-xl font-semibold flex items-center justify-center gap-2 hover:from-blue-600 hover:to-blue-800 transition-all duration-300 disabled:opacity-70"
           >
-            <FaUserPlus /> Register
+            {loading ? (
+              <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            ) : (
+              <>
+                <FaUserPlus /> Register
+              </>
+            )}
           </motion.button>
         </form>
 
