@@ -1,6 +1,6 @@
 // app/chat/page.tsx
 'use client';
-
+import GenerateImageButton from './components/GenerateImageButton';
 import { useState, useRef, useEffect } from "react";
 
 export default function ChatBox() {
@@ -87,7 +87,13 @@ export default function ChatBox() {
                         <div className="w-2 h-2 rounded-full bg-gray-400 animate-bounce" style={{ animationDelay: "0.4s" }}></div>
                       </div>
                     ) : (
-                      msg.bot
+                      <>
+                        {msg.bot}
+                        {/* Add the image generation button here */}
+                        <div className="flex justify-end mt-1">
+                          <GenerateImageButton text={msg.bot} message={msg.bot} />
+                        </div>
+                      </>
                     )}
                   </div>
                 </div>
