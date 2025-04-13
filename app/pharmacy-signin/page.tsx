@@ -6,12 +6,10 @@ import { FaUser, FaLock, FaSignInAlt } from 'react-icons/fa';
 import Particles from 'react-tsparticles';
 
 export default function PharmacyLoginPage() {
-  const [formData, setFormData] = useState({
-    username: '',
-    password: '',
-  });
+  const [formData, setFormData] = useState({ username: '', password: '' });
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,9 +19,9 @@ export default function PharmacyLoginPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     setError('');
     setMessage('');
+    setLoading(true);
 
     try {
       const res = await fetch('/api/pharmacy/signin', {
@@ -36,20 +34,15 @@ export default function PharmacyLoginPage() {
 
       if (!res.ok) {
         setError(data.error || 'Invalid credentials');
+        setLoading(false);
       } else {
         setMessage(data.message);
-        // Redirect using pharmacyId from response
-        console.log('Router object:', router);
-        console.log(
-          'Redirecting to:',
-          `/pharmacy/${data.pharmacyId}/medicines-list`,
-        );
         router.push(`/pharmacy/${data.pharmacyId}/medicines-list`);
-        console.log('Redirection attempted');
       }
     } catch (err) {
       console.error(err);
       setError('Server error');
+      setLoading(false);
     }
   };
 
@@ -61,7 +54,6 @@ export default function PharmacyLoginPage() {
           "linear-gradient(rgba(30, 27, 75, 0.7), rgba(30, 27, 75, 0.7)), url('https://images.unsplash.com/photo-1585435557343-3b092031a831?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
       }}
     >
-      {/* Particle Background */}
       <Particles
         id="tsparticles"
         options={{
@@ -108,7 +100,6 @@ export default function PharmacyLoginPage() {
         className="absolute inset-0 z-0"
       />
 
-      {/* Glassmorphic Card */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9, y: 50 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -170,19 +161,24 @@ export default function PharmacyLoginPage() {
               onChange={handleChange}
               placeholder="Password"
               required
-              className="w-full pl-12 pr-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-xl   text-violet-700 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-400 transition-all duration-300"
+              className="w-full pl-12 pr-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-xl text-violet-700 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-400 transition-all duration-300"
             />
           </div>
+
           <motion.button
-            whileHover={{
-              scale: 1.05,
-              boxShadow: '0 0 20px rgba(13, 148, 136, 0.5)',
-            }}
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             type="submit"
-            className="w-full py-3 bg-gradient-to-r from-teal-500 to-purple-700 text-gray-100 rounded-xl font-semibold flex items-center justify-center gap-2 hover:from-teal-600 hover:to-purple-800 transition-all duration-300"
+            disabled={loading}
+            className="w-full py-3 bg-gradient-to-r from-teal-500 to-purple-700 text-gray-100 rounded-xl font-semibold flex items-center justify-center gap-2 hover:from-teal-600 hover:to-purple-800 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            <FaSignInAlt /> Login
+            {loading ? (
+              <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            ) : (
+              <>
+                <FaSignInAlt /> Login
+              </>
+            )}
           </motion.button>
         </form>
 
