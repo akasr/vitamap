@@ -45,7 +45,7 @@ const slides: Slide[] = [
     title: 'Find Pharmacies Near You',
     description:
       'Discover nearby pharmacies with real-time medicine availability in just a few clicks.',
-    ctaText: 'Explore Pharmacies',
+    ctaText: 'Find medicines . .',
     ctaLink: '/search',
     icon: <FaMapMarkerAlt className="text-teal-500 text-6xl mb-6" />,
     image: '/images/pharmacy.jpg',
@@ -55,7 +55,7 @@ const slides: Slide[] = [
     title: 'Manage Your Pharmacy',
     description:
       'Effortlessly track and update your medicine inventory with our powerful tools.',
-    ctaText: 'Join as Pharmacy',
+    ctaText: 'Login as Pharmacy',
     ctaLink: '/pharmacy/signin',
     icon: <FaStore className="text-yellow-500 text-6xl mb-6" />,
     image: '/images/manage.png',
@@ -251,47 +251,6 @@ export default function Home() {
                 <p className="text-lg sm:text-xl text-gray-400 mb-8 max-w-md mx-auto lg:mx-0">
                   {slide.description}
                 </p>
-                {slide.id === 'location' && (
-                  <div className="relative max-w-md mx-auto lg:mx-0 mb-8">
-                    <div className="relative">
-                      <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-teal-500" />
-                      <Input
-                        type="text"
-                        placeholder="Find pharmacies near you..."
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        className="pl-10 bg-white bg-opacity-10 border-teal-500/30 text-gray-200 rounded-xl focus:ring-teal-500"
-                      />
-                    </div>
-                    {isSearchOpen && (
-                      <div className="absolute z-20 w-full mt-2">
-                        <Card className="bg-gray-900 bg-opacity-90 border-teal-500/30 rounded-xl">
-                          <CardContent className="p-4">
-                            {searchResults.length ? (
-                              searchResults.map((pharmacy) => (
-                                <div
-                                  key={pharmacy.name}
-                                  className="text-gray-200 hover:bg-teal-500/20 p-2 rounded cursor-pointer"
-                                  onClick={(e) => {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                    router.push('/search');
-                                  }}
-                                >
-                                  {pharmacy.name} - {pharmacy.distance}
-                                </div>
-                              ))
-                            ) : (
-                              <p className="text-gray-400">
-                                No pharmacies found.
-                              </p>
-                            )}
-                          </CardContent>
-                        </Card>
-                      </div>
-                    )}
-                  </div>
-                )}
                 <Button
                   className="bg-teal-600 text-gray-100 hover:bg-teal-700 rounded-xl px-6 py-3 text-lg transition-colors duration-300"
                   onClick={(e) => handleNavigation(e, slide.ctaLink)}
@@ -320,25 +279,12 @@ export default function Home() {
             e.preventDefault();
             e.stopPropagation();
             handleChatbotClick();
+            router.push('/chat');
           }}
         >
           <FaComment size={24} />
         </Button>
       </div>
-
-      {/* Chatbot Preview */}
-      {isChatOpen && (
-        <div className="fixed bottom-20 right-6 z-50 animate-fade-in">
-          <Card className="bg-white bg-opacity-10 backdrop-blur-md border-teal-500/30 w-80 shadow-xl">
-            <CardContent className="p-4">
-              <p className="text-gray-200">Hi! Ask me about medicines...</p>
-              <p className="text-gray-400 italic">
-                e.g., "What is Paracetamol?"
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      )}
     </div>
   );
 }
